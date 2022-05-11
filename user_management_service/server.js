@@ -4,6 +4,18 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 
+// Connect to mongodb
+const URI = process.env.MONGODB_URL
+mongoose.connect(URI, {
+    //useCreateIndex: true,
+    //useFindAndModify: false,
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}, err =>{
+    if(err) throw err;
+    console.log('Connected to MongoDB')
+})
+
 
 const app = express();
 app.use(express.json());
