@@ -3,7 +3,7 @@ const router = express.Router();
 import Movie from "../models/movies.js";
 
 router.route("/add").post((req, res) => {
-  const { title, description, showTime, banner, cast } = req.body;
+  const { title, description, showTime, banner, cast, duration } = req.body;
 
   const newMovie = new Movie({
     title,
@@ -11,6 +11,7 @@ router.route("/add").post((req, res) => {
     showTime,
     banner,
     cast,
+    duration,
   });
 
   newMovie
@@ -57,7 +58,7 @@ router.route("/get/:id").get(async (req, res) => {
 
 router.route("/update/:id").put(async (req, res) => {
   let movieID = req.params.id;
-  const { title, description, showTime, banner, cast } = req.body;
+  const { title, description, showTime, banner, cast, duration } = req.body;
 
   const updateMovie = {
     title,
@@ -65,6 +66,7 @@ router.route("/update/:id").put(async (req, res) => {
     showTime,
     banner,
     cast,
+    duration,
   };
 
   await Movie.findByIdAndUpdate(movieID, updateMovie)
