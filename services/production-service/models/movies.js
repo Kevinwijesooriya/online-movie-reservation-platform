@@ -13,13 +13,20 @@ const movieSchema = new Schema(
       required: true,
     },
     showTime: {
-      type: String,
+      type: Array,
       required: true,
     },
     banner: {
       type: String,
     },
-    cast: { type: Array, default: [] },
+    cast: {
+      type: Array,
+      default: [],
+    },
+    duration: {
+        type: String,
+        required: true,
+      },
   },
   {
     timestamps: true,

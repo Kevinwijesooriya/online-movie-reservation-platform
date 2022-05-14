@@ -6,6 +6,9 @@ import cookieParser from "cookie-parser";
 
 const { connect } = mongoose;
 
+//route imports
+import ReservationRouter from "./routes/reservation.js";
+
 // Connect MongoDB.
 const URI = process.env.MONGODB_URL;
 connect(
@@ -27,6 +30,8 @@ const app = express();
 app.use(json());
 app.use(cookieParser());
 app.use(cors());
+//routes
+app.use("/reservation",ReservationRouter);
 
 const port = process.env.PORT || 5020;
 
