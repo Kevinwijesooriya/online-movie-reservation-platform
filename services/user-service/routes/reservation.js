@@ -3,7 +3,7 @@ const router = express.Router();
 import Reservation from "../models/reservation.js";
 
 router.route("/add").post((req, res) => {
-  const { title, date, showTime, seatNumber, seatingArea, price } = req.body;
+  const { title, date, showTime, seatNumber, seatingArea, price, theater, userId } = req.body;
 
   const newReservation = new Reservation({
     title,
@@ -12,6 +12,8 @@ router.route("/add").post((req, res) => {
     seatNumber,
     seatingArea,
     price,
+    theater,
+    userId,
   });
 
   newReservation
@@ -64,7 +66,7 @@ router.route("/get/:id").get(async (req, res) => {
 
 router.route("/update/:id").put(async (req, res) => {
   let reservationID = req.params.id;
-  const { title, date, showTime, seatNumber, seatingArea, price } = req.body;
+  const { title, date, showTime, seatNumber, seatingArea, price, theater, userId } = req.body;
 
   const updateReservation = {
     title,
@@ -73,6 +75,8 @@ router.route("/update/:id").put(async (req, res) => {
     seatNumber,
     seatingArea,
     price,
+    theater,
+    userId,
   };
 
   await Reservation.findByIdAndUpdate(reservationID, updateReservation)
