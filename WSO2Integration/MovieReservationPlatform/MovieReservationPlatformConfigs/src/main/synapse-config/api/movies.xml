@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/movies" name="movies" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET" url-mapping="/getMovies">
+        <inSequence>
+            <log>
+                <property name="Message" value="Welcome to Movies"/>
+            </log>
+            <send>
+                <endpoint key="getMovies"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+</api>
