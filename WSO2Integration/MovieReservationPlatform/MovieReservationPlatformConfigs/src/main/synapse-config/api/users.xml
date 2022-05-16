@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/users" name="users" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST" url-mapping="/loginUser">
+        <inSequence>
+            <log>
+                <property name="Message" value="Welcome to Users"/>
+            </log>
+            <send>
+                <endpoint key="loginUser"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+</api>
