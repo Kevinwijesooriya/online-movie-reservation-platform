@@ -1,18 +1,32 @@
 import './App.css';
-import { Routes, Route, Link } from "react-router-dom";
-import MovieCard from './components/Cards/MovieCard';
-import ViewMovies from './components/movie/ViewMovies';
+import { BrowserRouter as Router} from "react-router-dom";
+
+import Navbar from './components/NavBar/Navbar';
+import MainPages from './components/MainPages';
 
 function App() {
   return (
+
     <div className="App">
-      <h1>Welcome to App!</h1>
-      <Link to="/movie-view" >Home</Link>
-      <Routes>
-        <Route path="/" element={<MovieCard />} />
-        <Route path="movie-view" element={<ViewMovies />} />
-      </Routes>
+      <Router>
+      <header>
+        <Navbar/>
+      </header>
+      
+         
+    
+        <main>
+       
+        <MainPages/>
+              
+        </main>
+        <footer></footer>
+     
+        </Router>
+      
+      
     </div>
+
   );
 }
 
