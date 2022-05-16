@@ -1,0 +1,35 @@
+{
+  "name": "reservation-service",
+  "version": "1.0.0",
+  "description": "This is the Reservation Service for Online Movie Reservation Platform",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "type": "module",
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kevinwijesooriya/online-movie-reservation-platform.git"
+  },
+  "author": "2022S1_REG_31",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kevinwijesooriya/online-movie-reservation-platform/issues"
+  },
+  "homepage": "https://github.com/Kevinwijesooriya/online-movie-reservation-platform#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.3.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
