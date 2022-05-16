@@ -24,9 +24,12 @@ const movieSchema = new Schema(
       default: [],
     },
     duration: {
-        type: String,
-        required: true,
-      },
+      type: String,
+      required: true,
+    },
+    availableTheaters: {
+      type: Array,
+    },
   },
   {
     timestamps: true,
