@@ -1,0 +1,13 @@
+openapi: 3.0.1
+info:
+  title: reservation
+  description: API Definition of reservation
+  version: 1.0.0
+servers:
+- url: http://localhost:8290/reservation
+paths:
+  /getReservations:
+    get:
+      responses:
+        default:
+          description: Default response

@@ -2,12 +2,12 @@ import {} from "dotenv/config";
 import express, { json } from "express";
 import mongoose from "mongoose";
 import cors from "cors";
-
+import cookieParser from "cookie-parser";
 
 const { connect } = mongoose;
 
 //route imports
-import userRoute from "./routes/user.js";
+import ReservationRouter from "./routes/reservation.js";
 
 // Connect MongoDB.
 const URI = process.env.MONGODB_URL;
@@ -28,11 +28,10 @@ connect(
 
 const app = express();
 app.use(json());
+app.use(cookieParser());
 app.use(cors());
-
 //routes
-app.use(userRoute);
-
+app.use("/reservation",ReservationRouter);
 
 const port = process.env.PORT || 5020;
 

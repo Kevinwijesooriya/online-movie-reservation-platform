@@ -1,30 +1,34 @@
 import mongoose from "mongoose";
 const { Schema, model } = mongoose;
 
-const userSchema = new Schema(
+const movieSchema = new Schema(
   {
-    name: {
+    title: {
       type: String,
       required: true,
       trim: true,
     },
-    email: {
-      type: String,
-      required: true,
-      unique: true,
-    },
-    password: {
+    description: {
       type: String,
       required: true,
     },
-    phone: {
+    showTime: {
+      type: Array,
+      required: true,
+    },
+    banner: {
+      type: String,
+    },
+    cast: {
+      type: Array,
+      default: [],
+    },
+    duration: {
       type: String,
       required: true,
     },
-
-    role: {
-      type: Number,
-      default: 0,
+    availableTheaters: {
+      type: Array,
     },
   },
   {
@@ -32,4 +36,4 @@ const userSchema = new Schema(
   }
 );
 
-export default model("Users", userSchema);
+export default model("Movie", movieSchema);
