@@ -1,5 +1,12 @@
+@import url('./components/Footer/footer.css');
+
 .App {
-  text-align: center;
+
+background-image: url("./assets/animesher.com_anime-gifs-anime-scenery-anime-scenery-gif-1434609.gif");
+background-repeat: repeat;
+background-size: cover;
+height: 100%;
+width: 100%;
 }
 
 .App-logo {
@@ -35,4 +42,19 @@
   to {
     transform: rotate(360deg);
   }
+}
+.formBody{
+  width: 60%;
+  margin: auto;
+  align-items: center;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+main{
+  margin-top: 2rem;
+}
+
+h1{
+  text-align: center;
 }

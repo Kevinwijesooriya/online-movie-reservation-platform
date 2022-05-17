@@ -3,6 +3,7 @@ import { BrowserRouter as Router} from "react-router-dom";
 
 import Navbar from './components/NavBar/Navbar';
 import MainPages from './components/MainPages';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -20,7 +21,9 @@ function App() {
         <MainPages/>
               
         </main>
-        <footer></footer>
+        <footer>
+          <Footer/>
+        </footer>
      
         </Router>
       
