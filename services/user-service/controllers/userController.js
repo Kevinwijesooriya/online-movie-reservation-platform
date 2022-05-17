@@ -11,26 +11,26 @@ const userController = {
   
         // check fields
         if (!name || !email || !password ||!phone)
-          return res.status(400).json({ message: "Please fill in all fields." });
+          return res.status(400).json({ msg: "Please fill in all fields." });
   
         // check email
         if (!validateEmail(email))
           return res
             .status(400)
-            .json({ message: "Please enter a valid email address." });
+            .json({ msg: "Please enter a valid email address." });
   
         // check user
         const user = await User.findOne({ email });
         if (user)
           return res
             .status(400)
-            .json({ message: "This email is already registered in our system." });
+            .json({ msg: "This email is already registered in our system." });
   
         // check password
         if (password.length < 6)
           return res
             .status(400)
-            .json({ message: "Password must be at least 6 characters." });
+            .json({ msg: "Password must be at least 6 characters." });
   
         // hash password
         const salt = await bcrypt.genSalt();
@@ -49,11 +49,11 @@ const userController = {
   
    
       res.status(200).json({ 
-        message: "Welcome! Please Login.",
+        msg: "Welcome! Please Login.",
         success: true,  
       });
        } catch (err) {
-       res.status(500).json({ message: err.message,
+       res.status(500).json({ msg: err.message,
         success: false });
      }
     },
@@ -104,10 +104,10 @@ const userController = {
       update: async (req, res) => {
         try {
           // get info
-          const { userId ,name, email, phone } = req.body;
+          const { name, email, phone } = req.body;
     
           // update
-          await User.findOneAndUpdate({ _id: userId }, { 
+          await User.findOneAndUpdate({ _id: req.user.id }, { 
               name, 
               email, 
               phone 

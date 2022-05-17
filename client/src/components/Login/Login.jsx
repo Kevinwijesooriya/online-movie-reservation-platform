@@ -12,11 +12,11 @@ const Login = () => {
 });
 const [token, setToken] = state.token
 
-const onChangeInput = e =>{
+const onChangeInput =( e )=>{
   const {name, value} = e.target;
   setUser({...user, [name]:value})
 };
-const loginSubmit = async e =>{
+const loginSubmit = async( e )=>{
   e.preventDefault()
   try {
       const res = await axios.post('/api/user/signin', {...user})
@@ -79,8 +79,8 @@ const loginSubmit = async e =>{
           </div>
           <div className='formRow'>
             <center>
-              <Link to="">Forget Password ?</Link><br/><br/>
-              <Link to="">Register</Link><br/><br/>
+              <Link to="/forgetPassword">Forget Password ?</Link><br/><br/>
+              <Link to="/register">Register</Link><br/><br/>
               <button type="submit" className="btn btn-outline-success">Submit</button>
             </center>
           </div>

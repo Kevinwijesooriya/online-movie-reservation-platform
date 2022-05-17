@@ -9,8 +9,9 @@ import Typography from '@mui/material/Typography';
 function MovieCard() {
   return (
     <div>
-      <h1>MovieCard</h1>
-      <Card sx={{ maxWidth: 345 }}>
+      <div className="cardBody">
+        <div className="cardItem">
+        <Card sx={{ maxWidth: 345 }}>
         <CardMedia
           component="img"
           height="140"
@@ -30,6 +31,16 @@ function MovieCard() {
           <Button size="small">Learn More</Button>
         </CardActions>
       </Card>
+        </div>
+      
+        
+     
+      
+
+
+
+      </div>
+      
     </div>
   );
 }
