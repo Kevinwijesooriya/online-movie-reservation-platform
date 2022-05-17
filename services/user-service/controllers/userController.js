@@ -1,6 +1,7 @@
 import User from "../models/user.js";
 import bcrypt from "bcryptjs";
 import validateEmail from "../helpers/validateEmail.js";
+import jwt from 'jsonwebtoken';
 
 const userController = {
     register: async (req,res) => {
@@ -74,12 +75,25 @@ const userController = {
             return res.status(400).json({ msg: "This password is incorrect." });
     
               
-          // signing success
-          res.status(200).json({ msg: "Signing success" ,user});
+           // If login success , create access token and refresh token
+           const accesstoken = createAccessToken({id: user._id})
+          
+
+          res.status(200).json({ msg: "Signing success" ,token:accesstoken});
         } catch (err) {
           res.status(500).json({ msg: err.message });
         }
       },
+      getUser: async (req, res) =>{
+        try {
+            const user = await User.findById(req.user.id).select('-password')
+            if(!user) return res.status(400).json({msg: "User does not exist."})
+
+            res.json(user)
+        } catch (err) {
+            return res.status(500).json({msg: err.message})
+        }
+    },
       signout: async (req, res) => {
         try {
             return res.status(200).json({ msg: "Signout success." });
@@ -133,5 +147,9 @@ const userController = {
       },
    
   };
-  
+
+  const createAccessToken = (user) =>{
+      return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {expiresIn: '7d'})
+  }
+
   export default userController;
