@@ -7,6 +7,8 @@ import Login from './Login/Login.jsx';
 import { GlobalState } from '../GlobalState.js';
 import Profile from './Profile/Profile.jsx';
 import Register from './Register/Register.jsx';
+import ResetPassword from './ChangePassword/ResetPassword.jsx';
+import ChangePassword from './ChangePassword/ChangePassword.jsx';
 
 
 const MainPages = () => {
@@ -21,6 +23,8 @@ const MainPages = () => {
               <Route path="/login" element={isLogged ? <Navigate to={"/"}/> : <Login/>} />
               <Route path="/register" element={isLogged ? <Navigate to={"/"}/> : <Register/>} />
               <Route path="/profile" element={isLogged ?  <Profile/>: <NotFound/>}/>
+              <Route path="/forgetPassword" element={isLogged ?  <Navigate to={"/"}/>: <ResetPassword/>}/>
+              <Route path="/changePassword" element={isLogged ?  <ChangePassword/>: <NotFound/>}/>
         </Routes>
 
   )
