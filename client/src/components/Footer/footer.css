@@ -1,16 +1,15 @@
 footer{
-    position: absolute;
+   
     bottom: 0;
     left: 0;
     right: 0;
-    background: #111;
-    height: auto;
     width: 100%;
-
     padding-top: 40px;
     color: #fff;
 }
+
 .footer-content{
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -62,7 +61,8 @@ footer{
 }
 
 .footer-bottom{
-    background: #000;
+    
+    background: #111;
     width: 100vw;
     padding: 20px;
 padding-bottom: 40px;
