@@ -27,6 +27,7 @@ function UserAPI(token) {
                     //alert(err.response.data.msg)
                     sessionStorage.clear();
                     localStorage.clear();
+                    window.location.href = "/login";
                 }
             }
 
