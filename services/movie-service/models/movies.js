@@ -30,6 +30,7 @@ const movieSchema = new Schema(
     availableTheaters: {
       type: Array,
     },
+   
   },
   {
     timestamps: true,
