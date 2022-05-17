@@ -1,8 +1,16 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from "../../assets/logo.png";
+import { GlobalState } from '../../GlobalState';
 
 const Navbar = () => {
+    const state = useContext(GlobalState);
+    const [isLogged] = state.userAPI.isLogged;
+    const [isAdmin] = state.userAPI.isAdmin;
+    const [userDetails] = state.userAPI.user;
+
+    //console.log(userDetails);
+
     const navigate = useNavigate();
     const onClickHandler=()=>{
         navigate("/login");
@@ -28,7 +36,13 @@ const Navbar = () => {
      
       </ul>
       <form class="d-flex">
+        {isLogged ? <>
+          <Link to={"/profile"}>{userDetails.name}</Link>
+        </>:<>
+        
         <button class="btn btn-outline-success" onClick={onClickHandler} type="submit">Login</button>
+        </>}
+        
       </form>
     </div>
   </div>

@@ -1,10 +1,15 @@
 @import url('./components/Footer/footer.css');
 
-.App {
+body{
+  background-image: url("./assets/animesher.com_anime-gifs-anime-scenery-anime-scenery-gif-1434609.gif");
+  background-repeat: repeat;
+  background-size: cover;
+  background-position: fixed;
+}
 
-background-image: url("./assets/animesher.com_anime-gifs-anime-scenery-anime-scenery-gif-1434609.gif");
-background-repeat: repeat;
-background-size: cover;
+.App {
+ 
+
 height: 100%;
 width: 100%;
 }
@@ -47,14 +52,37 @@ width: 100%;
   width: 60%;
   margin: auto;
   align-items: center;
-  padding: 10px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 20px;
+  box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
+  background: rgba(3, 3, 3, 0.5);
+  color:azure;
 
 }
 main{
   margin-top: 2rem;
+  
+
 }
 
 h1{
   text-align: center;
+}
+
+.formBody .formRow{
+  width: 100%;
+  justify-content: space-between;
+  margin: auto;
+  display: inline;
+  align-items: center;
+}
+
+.formBody .formRow button{
+  width: 80%;
+ 
+
+}
+
+a{
+  text-decoration: none;
+  color: rgb(255, 255, 255);
 }

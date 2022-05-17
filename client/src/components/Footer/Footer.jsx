@@ -3,8 +3,8 @@ import React from 'react'
 const Footer = () => {
   return (
     <div><div class="footer-content">
-    <h3>Foolish Developer</h3>
-    <p>Raj Template is a blog website where you will find great tutorials on web design and development. Here each tutorial is beautifully described step by step with the required source code.</p>
+    <h3>Onilne Movie Reservation</h3>
+    <p>This is a biggest cinema hall in the world </p>
     <ul class="socials">
         <li><a href="#"><i class="fa fa-facebook"></i></a></li>
         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -14,7 +14,7 @@ const Footer = () => {
     </ul>
 </div>
 <div class="footer-bottom">
-    <p>copyright &copy; <a href="#">Foolish Developer</a>  </p>
+    <p>copyright &copy; <a href="https://www.sliit.lk/">2022S1_REG_31 @ SLIIT</a>  </p>
             <div class="footer-menu">
               <ul class="f-menu">
                 <li><a href="">Home</a></li>

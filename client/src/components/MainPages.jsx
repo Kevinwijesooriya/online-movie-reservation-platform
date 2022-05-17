@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import ViewMovies from './movie/ViewMovies.js';
 import MovieCard from './Cards/MovieCard.js';
 import NotFound from './utils/not_found/NotFound.jsx';
 import Login from './Login/Login.jsx';
+import { GlobalState } from '../GlobalState.js';
 
 
 const MainPages = () => {
-    const isLogged = false;
+      const state = useContext(GlobalState);
+      const [isLogged] = state.userAPI.isLogged;
+      const [isAdmin] = state.userAPI.isAdmin;
   return (
          
         <Routes>
