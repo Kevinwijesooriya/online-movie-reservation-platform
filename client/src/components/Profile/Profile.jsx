@@ -72,6 +72,9 @@ const Profile = () => {
     }
     
   };
+  const changePass =()=>{
+    window.location.href = "/changePassword";
+  }
   return (
     <>
         <>
@@ -123,7 +126,7 @@ const Profile = () => {
         <div className='formRow'>
             <center>
               
-            <button className="btn btn-outline-warning" onClick={logout}>Change Password</button>
+            <button className="btn btn-outline-warning" onClick={changePass}>Change Password</button>
             </center>
           </div>
         <div className='formRow'>
