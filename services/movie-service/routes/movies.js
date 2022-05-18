@@ -46,13 +46,16 @@ class APIfeatures {
 }
 
 router.route("/addMovie").post((req, res) => {
-  const { title, description, images, cast, duration, availableTheaters } = req.body;
-
+  const data = req.body;
+  const { title, description, catelog, images, cast, duration, availableTheaters } =data;
+  console.log("🚀 ~ file: movies.js ~ line 51 ~ router.route ~ data", data)
+  
   if(!images) return res.status(400).json({msg: "No image upload"});
 
   const newMovie = new Movie({
     title,
     description,
+    catelog,
     images,
     cast,
     duration,

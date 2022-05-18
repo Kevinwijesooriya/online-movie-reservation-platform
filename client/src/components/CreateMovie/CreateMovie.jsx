@@ -9,10 +9,14 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { GlobalState } from '../../GlobalState';
 
+import Select from 'react-select';
+import CreatableSelect from 'react-select/creatable';
+
 const initialState = {
     title:"",
     description:"",
     cast:[],
+    catelog:[],
     duration:"",
     availableTheaters:[{theater:"",showTime:[""]}],
     _id: ''
@@ -24,6 +28,8 @@ function CreateMovie() {
     const [categories] = state.categoriesAPI.categories
     const [images, setImages] = useState(false)
     const [loading, setLoading] = useState(false)
+    const [selectedTheater, setSelectedTheater] = useState("")
+    const [theaters] = state.theatersAPI.theaters
 
 
     const [isAdmin] = state.userAPI.isAdmin
@@ -176,9 +182,35 @@ function CreateMovie() {
         }
     }
 
-    const handleChangeInput = e =>{
-        const {name, value} = e.target
-        setMovie({...movie, [name]:value})
+    const handleChangeInput = e => {
+        const { name, value } = e.target
+        setMovie({ ...movie, [name]: value })
+        console.log("🚀 ~ file: CreateMovie.jsx ~ line 187 ~ CreateMovie ~ movie", movie)
+    }
+    const handleCastChange = (selectedOption) => {
+        let option = [];
+        selectedOption.map((cast) => {
+            option.push(cast.value)
+        })
+        setMovie({ ...movie, cast: option })
+    }
+    const handleCategoryChange = (selectedOption) => {
+        let option = [];
+        selectedOption.map((category) => {
+            option.push(category.value)
+        })
+        setMovie({ ...movie, catelog: option });
+    }
+    const handleAvailableTheatersChange = (selectedOption) => {
+        let selectedDurations = [];
+        if (selectedOption.value) {
+            setSelectedTheater(selectedOption.value);
+        } else {
+            selectedOption.map((category) => {
+                selectedDurations.push(category.value)
+            })
+        }
+        setMovie({ ...movie, availableTheaters: [{ theater: selectedTheater, showTime: selectedDurations }] });
     }
 
     const handleSubmit = async e =>{
@@ -217,6 +249,7 @@ function CreateMovie() {
                     progress: undefined,
                     });
             }else{
+                console.log(movie,images)
                 const res = await axios.post('http://localhost:5000/api/addMovie', {...movie, images}, {
                     headers: {Authorization: token}
                 })
@@ -233,6 +266,7 @@ function CreateMovie() {
             setCallback(!callback)
             history.push("/")
         } catch (err) {
+            console.log("🚀 ~ file: CreateMovie.jsx ~ line 268 ~ CreateMovie ~ err", err)
             toast.error(err.response.data.msg, {
                 position: "top-right",
                 autoClose: 5000,
@@ -249,6 +283,24 @@ function CreateMovie() {
     const styleUpload = {
         display: images ? "block" : "none"
     }
+    const categoryOptions = [];
+    categories.map((category) => (
+        categoryOptions.push({ value: category.name, label: category.name })
+    ));
+
+    const theaterOptions = [];
+    theaters.map((theater) => (
+        theaterOptions.push({ value: theater.name, label: theater.name })
+    ))
+
+    const durationOptions = [
+        { value: '10:00 am', label: '10:00 am' },
+        { value: '01:00 pm', label: '01:00 pm' },
+        { value: '07:00 pm', label: '07:00 pm' }
+    ];
+
+    const castOptions = [];
+
     return (
         <div className="create_product formBody">
              <ToastContainer/>
@@ -294,16 +346,50 @@ function CreateMovie() {
 
                 <div className="row">
                     <label htmlFor="categories">Categories: </label>
-                    <select name="category" value={movie.category} onChange={handleChangeInput} >
-                        <option value="">Please select a category</option>
-                        {
-                            categories.map(category => (
-                                <option value={category._id} key={category._id}>
-                                    {category.name}
-                                </option>
-                            ))
-                        }
-                    </select>
+                    <Select
+                        onChange={handleCategoryChange}
+                        isMulti
+                        name="catelog"
+                        options={categoryOptions}
+                        className="basic-multi-select"
+                        classNamePrefix="select"
+                    />
+                </div>
+
+                <div className="row">
+                    <label htmlFor="categories">Cast: </label>
+                    <CreatableSelect
+                        isClearable
+                        onChange={handleCastChange}
+                        isMulti
+                        name="cast"
+                        options={castOptions}
+                        className="basic-multi-select"
+                        classNamePrefix="select"
+                    />
+                </div>
+
+                <div className="row">
+                    <label htmlFor="categories">Theaters: </label>
+                    <Select
+                        className="basic-single"
+                        classNamePrefix="select"
+                        name="theaters"
+                        options={theaterOptions}
+                        onChange={handleAvailableTheatersChange}
+                    />
+                </div>
+
+                <div className="row">
+                    <label htmlFor="categories">Durations: </label>
+                    <Select
+                        isMulti
+                        name="durations"
+                        options={durationOptions}
+                        className="basic-multi-select"
+                        classNamePrefix="select"
+                        onChange={handleAvailableTheatersChange}
+                    />
                 </div>
 
                 <button className='btn btn-outline-success' type="submit">{onEdit? "Update" : "Create"}</button>

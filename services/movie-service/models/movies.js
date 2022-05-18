@@ -21,7 +21,7 @@ const movieSchema = new Schema(
     },
     cast: {
       type: Array,
-      default: [],
+      // default: [],
     },
     duration: {
       type: String,
