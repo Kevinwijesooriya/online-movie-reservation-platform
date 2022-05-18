@@ -15,7 +15,7 @@ import Locations from './Locations/Locations.jsx';
 import CreateTheater from './CreateTheater/CreateTheater.jsx';
 import Categories from './Categories/Categories.jsx';
 import CreateMovie from './CreateMovie/CreateMovie.jsx';
-import Movies from './movie/Movies.jsx';
+import Movies from './Movie/Movies.jsx';
 //edit
 
 const MainPages = () => {
