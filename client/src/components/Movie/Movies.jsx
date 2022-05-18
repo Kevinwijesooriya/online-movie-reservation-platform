@@ -30,10 +30,10 @@ function Movies() {
     const deleteMovie = async(id, public_id) => {
         try {
             setLoading(true)
-            const destroyImg = axios.post('/api/destroy', {public_id},{
+            const destroyImg = axios.post('http://localhost:5000/api/movieimagedestroy', {public_id},{
                 headers: {Authorization: token}
             })
-            const deleteMovie = axios.delete(`/api/products/${id}`, {
+            const deleteMovie = axios.delete(`http://localhost:5000/api/delete/${id}`, {
                 headers: {Authorization: token}
             })
 
@@ -99,7 +99,7 @@ function Movies() {
                 <span>Select all</span>
                 <input type="checkbox" checked={isCheck} onChange={checkAll} />
                 <button className='btn btn-outline-danger' onClick={deleteAll}>Delete ALL</button>
-                <Link className='btn btn-outline-success' to={"/create_theater"}>Add a Theater</Link>
+                <Link className='btn btn-outline-success' to={"/create_movie"}>Add a Movie</Link>
             </div>
         }
 
