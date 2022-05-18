@@ -34,6 +34,7 @@ const movieSchema = new Schema(
           type: Array,
           required: true,
         },
+        
 
       }
     ],

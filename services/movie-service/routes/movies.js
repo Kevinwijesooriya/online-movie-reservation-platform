@@ -45,15 +45,14 @@ class APIfeatures {
   }
 }
 
-router.route("/add").post((req, res) => {
-  const { title, description, showTime, images, cast, duration, availableTheaters } = req.body;
+router.route("/addMovie").post((req, res) => {
+  const { title, description, images, cast, duration, availableTheaters } = req.body;
 
   if(!images) return res.status(400).json({msg: "No image upload"});
 
   const newMovie = new Movie({
     title,
     description,
-    showTime,
     images,
     cast,
     duration,
@@ -74,18 +73,22 @@ router.route("/add").post((req, res) => {
     });
 });
 
-router.route("/").get((req, res) => {
-  Movie.find()
-    .then((Movie) => {
-      res.json(Movie);
-      console.log("Movies fetched :", Movie);
-    })
-    .catch((err) => {
-      res
-        .status(500)
-        .send({ status: "Error with fetching movies ", error: err.message });
-      console.log("Error with fetching movies :", err);
-    });
+router.route("/movies").get(async(req, res) => {
+  try {
+  const features = new APIfeatures(Movie.find(), req.query)
+            .filtering().sorting().paginating()
+
+            const movies = await features.query
+
+            res.json({
+                status: 'success',
+                result: movies.length,
+                movies: movies
+            })
+            
+        } catch (err) {
+            return res.status(500).json({msg: err.message})
+        }
 });
 
 router.route("/get/:id").get(async (req, res) => {
@@ -102,7 +105,7 @@ router.route("/get/:id").get(async (req, res) => {
     });
 });
 
-router.route("/update/:id").put(async (req, res) => {
+router.route("/updateMovie/:id").put(async (req, res) => {
   let movieID = req.params.id;
   const { title, description, showTime, images, cast, duration, availableTheaters } = req.body;
   if(!images) return res.status(400).json({msg: "No image upload"});

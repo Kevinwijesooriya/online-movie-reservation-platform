@@ -1,6 +1,7 @@
 import React, {createContext, useState, useEffect} from 'react';
 import CategoriesAPI from './Api/CategoriesAPI';
 import LocationAPI from './Api/LocationApi';
+import MoviesAPI from './Api/MoviesAPI';
 import TheatersAPI from './Api/TheaterApi';
 import UserAPI from './Api/UserAPI';
 export const GlobalState = createContext();
@@ -26,6 +27,7 @@ export const DataProvider = ({children}) =>{
         theatersAPI:TheatersAPI(),
         locationAPI:LocationAPI(),
         categoriesAPI: CategoriesAPI(),
+        moviesAPI:MoviesAPI(),
         
     }
 
