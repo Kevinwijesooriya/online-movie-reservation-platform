@@ -16,7 +16,7 @@ const movieSchema = new Schema(
       type: Array,
     },
     
-    banner: {
+    images: {
       type: String,
     },
     cast: {
