@@ -12,10 +12,10 @@ const movieSchema = new Schema(
       type: String,
       required: true,
     },
-    showTime: {
+    catelog:{
       type: Array,
-      required: true,
     },
+    
     banner: {
       type: String,
     },
@@ -27,9 +27,16 @@ const movieSchema = new Schema(
       type: String,
       required: true,
     },
-    availableTheaters: {
-      type: Array,
-    },
+    availableTheaters: [
+      {
+        theater:String,
+        showTime: {
+          type: Array,
+          required: true,
+        },
+
+      }
+    ],
    
   },
   {

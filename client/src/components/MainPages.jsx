@@ -10,6 +10,10 @@ import Register from './Register/Register.jsx';
 import ResetPassword from './ChangePassword/ResetPassword.jsx';
 import ChangePassword from './ChangePassword/ChangePassword.jsx';
 import MoviesTicket from './Ticket/MoviesTicket.js';
+import Theaters from './Theaters/Theaters.jsx';
+import Locations from './Locations/Locations.jsx';
+import CreateTheater from './CreateTheater/CreateTheater.jsx';
+import Categories from './Categories/Categories.jsx';
 
 
 const MainPages = () => {
@@ -27,6 +31,12 @@ const MainPages = () => {
               <Route path="/profile" element={isLogged ?  <Profile/>: <NotFound/>}/>
               <Route path="/forgetPassword" element={isLogged ?  <Navigate to={"/"}/>: <ResetPassword/>}/>
               <Route path="/changePassword" element={isLogged ?  <ChangePassword/>: <NotFound/>}/>
+              <Route path="/theaters" element={<Theaters/>}/>
+              <Route path="/locations" element={isAdmin ? <Locations/> : <NotFound/>} />
+              <Route path="//addCategories" element={isAdmin ? <Categories/> : <NotFound/>} />
+              <Route path="/create_theater" element={isAdmin ? <CreateTheater/> : <NotFound/>} />
+              <Route path="/edit_theater/:id" element={isAdmin ? <CreateTheater/> : <NotFound/>} />
+              
         </Routes>
 
   )

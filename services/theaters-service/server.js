@@ -2,14 +2,15 @@ import {} from "dotenv/config";
 import express, { json } from "express";
 import mongoose from "mongoose";
 import cors from "cors";
+import fileUpload from 'express-fileupload';
 
 
 const { connect } = mongoose;
 
 //route imports
-import MovieRouter from "./routes/movies.js";
-import catelogRouter from './routes/catelogRouter.js';
-
+import uploadRoute from "./routes/upload.js";
+import theatersRouter from "./routes/theater.js";
+import locationsRouter from "./routes/location.js";
 // Connect MongoDB.
 const URI = process.env.MONGODB_URL;
 connect(
@@ -30,14 +31,19 @@ connect(
 const app = express();
 app.use(json());
 app.use(cors());
-//routes
-app.use("/movies",MovieRouter);
-app.use('/api',catelogRouter);
+app.use(fileUpload({
+  useTempFiles: true
+}))
 
-const port = process.env.PORT || 5000;
+//routes
+app.use(uploadRoute);
+app.use(theatersRouter);
+app.use(locationsRouter);
+
+
+const port = process.env.PORT || 5080;
 
 app.listen(port, () => {
   `Server running on port ${port} 🔥`;
   console.log(`Server running on port ${port} 🔥`);
 });
-

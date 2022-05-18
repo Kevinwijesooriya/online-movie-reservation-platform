@@ -40,7 +40,7 @@ const Profile = () => {
       
     } else {
       try {
-        const res = await axios.post('/api/user/updateInfo', {...user},{
+        const res = await axios.post('http://localhost:5010/api/user/updateInfo', {...user},{
           headers: {Authorization: token}
       })
         toast.success(res.data.msg, {

@@ -1,4 +1,7 @@
 import React, {createContext, useState, useEffect} from 'react';
+import CategoriesAPI from './Api/CategoriesAPI';
+import LocationAPI from './Api/LocationApi';
+import TheatersAPI from './Api/TheaterApi';
 import UserAPI from './Api/UserAPI';
 export const GlobalState = createContext();
 
@@ -20,6 +23,9 @@ export const DataProvider = ({children}) =>{
     const state = {
         token: [token, setToken],
         userAPI: UserAPI(token),
+        theatersAPI:TheatersAPI(),
+        locationAPI:LocationAPI(),
+        categoriesAPI: CategoriesAPI(),
         
     }
 
