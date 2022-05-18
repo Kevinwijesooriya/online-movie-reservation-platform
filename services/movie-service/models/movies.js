@@ -16,9 +16,10 @@ const movieSchema = new Schema(
       type: Array,
     },
     
-    images: {
-      type: String,
-    },
+    images:{
+      type: Object,
+      required: true
+  },
     cast: {
       type: Array,
       // default: [],
