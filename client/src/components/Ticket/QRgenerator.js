@@ -1,9 +1,9 @@
-import React, {useState} from 'react'
+import React, {useContext, useState} from 'react'
 import {Fab, TextField, TextareaAutosize, Grid} from '@material-ui/core'
 import QRcode from 'qrcode.react'
 
 export default function QRgenerator() {
-
+  
     const [qr, setQr] = useState("test");
 
     const handleChange = (event) => {

@@ -9,6 +9,7 @@ import Profile from './Profile/Profile.jsx';
 import Register from './Register/Register.jsx';
 import ResetPassword from './ChangePassword/ResetPassword.jsx';
 import ChangePassword from './ChangePassword/ChangePassword.jsx';
+import MoviesTicket from './Ticket/MoviesTicket.js';
 
 
 const MainPages = () => {
@@ -20,6 +21,7 @@ const MainPages = () => {
         <Routes>
               <Route path="/" element={<MovieCard />} />
               <Route path="/movie-view" element={<ViewMovies />} />
+              <Route path="/movie-Ticket" element={<MoviesTicket />} />
               <Route path="/login" element={isLogged ? <Navigate to={"/"}/> : <Login/>} />
               <Route path="/register" element={isLogged ? <Navigate to={"/"}/> : <Register/>} />
               <Route path="/profile" element={isLogged ?  <Profile/>: <NotFound/>}/>

@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { GlobalState } from '../../GlobalState';
 
 export default function MoviesTicket() {
+    const state = useContext(GlobalState);
+    const [userDetails] = state.userAPI.user;
+    console.log(userDetails._id);
     return (
         <div>MoviesTicket
             <form>
