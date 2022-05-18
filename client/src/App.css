@@ -84,6 +84,7 @@ h1{
 a{
   text-decoration: none;
   color: rgb(255, 255, 255);
+  padding: 10px;
 }
 a:hover{
   color: #007e39;

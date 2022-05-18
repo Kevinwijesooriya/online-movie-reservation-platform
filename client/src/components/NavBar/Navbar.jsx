@@ -29,16 +29,28 @@ const Navbar = () => {
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        {!isAdmin&&
+        <>
+         <li class="nav-item">
+          <a class="nav-link" href="/theaters">t</a>
+        </li>
+        </>}
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">Home</a>
+          <a class="nav-link" href="/aboutUs">About us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/aboutus">About us</a>
+          <a class="nav-link" href="/contactUs">Contact us</a>
         </li>
      
       </ul>
       <form class="d-flex">
         {isLogged ? <>
+        {isAdmin&& <>
+          <Link to={"/theaters"}>Theater Managements</Link>
+          <Link to={"/locations"}>Location Managements</Link>
+          <Link to={"/addCategories"}>Movie Categories Managements</Link>
+          <Link to={"/bookings"}>Bookings Managements</Link>
+        </>}
           <Link to={"/profile"}>{userDetails.name}</Link>
         </>:<>
         
