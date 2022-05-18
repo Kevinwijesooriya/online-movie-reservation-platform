@@ -12,6 +12,9 @@ const movieSchema = new Schema(
       type: String,
       required: true,
     },
+    catelog:{
+      type: Array,
+    },
     
     banner: {
       type: String,
