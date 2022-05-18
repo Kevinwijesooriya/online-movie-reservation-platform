@@ -83,7 +83,7 @@ function Movies() {
 
     const deleteAll = () =>{
         movies.forEach(movie => {
-            if(movie.checked) deleteProduct(movie._id, movie.images.public_id)
+            if(movie.checked) deleteMovie(movie._id, movie.images.public_id)
         })
     }
 
