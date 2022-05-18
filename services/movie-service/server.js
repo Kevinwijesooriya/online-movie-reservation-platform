@@ -2,6 +2,7 @@ import {} from "dotenv/config";
 import express, { json } from "express";
 import mongoose from "mongoose";
 import cors from "cors";
+import fileUpload from "express-fileupload";
 
 
 const { connect } = mongoose;
@@ -9,6 +10,7 @@ const { connect } = mongoose;
 //route imports
 import MovieRouter from "./routes/movies.js";
 import catelogRouter from './routes/catelogRouter.js';
+import movieuploadRoute from "./routes/upload.js";
 
 // Connect MongoDB.
 const URI = process.env.MONGODB_URL;
@@ -30,9 +32,13 @@ connect(
 const app = express();
 app.use(json());
 app.use(cors());
+app.use(fileUpload({
+  useTempFiles: true
+}))
 //routes
-app.use("/movies",MovieRouter);
+app.use("/api",MovieRouter);
 app.use('/api',catelogRouter);
+app.use('/api',movieuploadRoute);
 
 const port = process.env.PORT || 5000;
 
