@@ -18,7 +18,7 @@ function Filters() {
     }
 
     return (
-        <div className="filter_menu">
+        <div className="filter_menu formBody">
             <div className="row1">
                 <span>Filters: </span>
                 <select name="location" value={location} onChange={handleLoaction} >
@@ -33,10 +33,7 @@ function Filters() {
                 </select>
             </div>
 
-            <input type="text" value={search} placeholder="Enter your search!"
-            onChange={e => setSearch(e.target.value.toLowerCase())} />
-
-            <div className="row sort">
+            <div className="rowsort sort">
                 <span>Sort By: </span>
                 <select value={sort} onChange={e => setSort(e.target.value)} >
                     <option value=''>Newest</option>

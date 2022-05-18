@@ -121,14 +121,14 @@ function Locations() {
     }
 
     return (
-        <div className="categories">
+        <div className="categories formBody">
                  <ToastContainer/>
             <form onSubmit={createLocation}>
                 <label htmlFor="location">Location</label>
                 <input type="text" name="location" value={location} required
                 onChange={e => setLocation(e.target.value)} />
 
-                <button type="submit">{onEdit? "Update" : "Create"}</button>
+                <button className='btn btn-outline-success'  type="submit">{onEdit? "Update" : "Create"}</button>
             </form>
 
             <div className="col">
@@ -137,8 +137,8 @@ function Locations() {
                         <div className="row" key={location._id}>
                             <p>{location.location}</p>
                             <div>
-                                <button onClick={() => editLocation(location._id, location.location)}>Edit</button>
-                                <button onClick={() => deleteLocation(location._id)}>Delete</button>
+                                <button className='btn btn-outline-warning' onClick={() => editLocation(location._id, location.location)}>Edit</button>
+                                <button className='btn btn-outline-danger' onClick={() => deleteLocation(location._id)}>Delete</button>
                             </div>
                         </div>
                     ))

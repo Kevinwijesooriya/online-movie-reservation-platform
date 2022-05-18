@@ -51,6 +51,7 @@ width: 100%;
   box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
   background: rgba(3, 3, 3, 0.5);
   color:azure;
+  overflow:hidden;
 
 }
 main{
@@ -93,11 +94,11 @@ a:hover{
 .cardBody{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
   margin: auto;
   
 
 }
 .cardBody .cardItem {
   margin-top: 20px;
+  margin-right: 20px;
 }

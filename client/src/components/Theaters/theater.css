@@ -21,10 +21,7 @@
   letter-spacing: 1.3px;
 }
 .delete-all button{
-  border: 1px solid crimson;
-  padding: 10px 25px;
-  color: crimson;
-  text-transform: uppercase;
+ margin-right: 10px;
 }
 
 /* ------------ Filters Menu ----------------- */
@@ -37,13 +34,14 @@
     display: flex;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
-            justify-content: space-between;
+            justify-content: left;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     margin: 15px 0;
+    
   }
   
   .filter_menu select, input {
@@ -51,6 +49,7 @@
     outline: none;
     height: 40px;
     padding: 0 5px;
+    margin-right: 10px;
   }
   
   .filter_menu input {
