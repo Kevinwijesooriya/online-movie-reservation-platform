@@ -16,7 +16,7 @@ import CreateTheater from './CreateTheater/CreateTheater.jsx';
 import Categories from './Categories/Categories.jsx';
 import CreateMovie from './CreateMovie/CreateMovie.jsx';
 import Movies from './movie/Movies.jsx';
-
+//edit
 
 const MainPages = () => {
       const state = useContext(GlobalState);
