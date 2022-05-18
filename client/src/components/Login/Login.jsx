@@ -19,7 +19,7 @@ const onChangeInput =( e )=>{
 const loginSubmit = async( e )=>{
   e.preventDefault()
   try {
-      const res = await axios.post('/api/user/signin', {...user})
+      const res = await axios.post('http://localhost:5010/api/user/signin', {...user})
       toast.success(res.data.msg, {
           position: "top-right",
           autoClose: 5000,
