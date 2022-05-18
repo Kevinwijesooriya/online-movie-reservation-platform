@@ -23,7 +23,7 @@
     margin-bottom: 10px;
   }
   
-  .categories input, button {
+  .categories input{
     height: 35px;
     border: none;
     outline: none;
@@ -32,14 +32,10 @@
   
   .categories input {
     width: 210px;
+    margin-bottom: 5px;
   }
   
-  .categories button {
-    width: 70px;
-    background: #555;
-    color: white;
-    margin-left: 10px;
-  }
+
   
   .categories .row {
     min-width: 290px;

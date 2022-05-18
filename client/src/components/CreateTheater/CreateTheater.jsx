@@ -248,7 +248,7 @@ function CreateTheater() {
         display: images ? "block" : "none"
     }
     return (
-        <div className="create_product">
+        <div className="create_product formBody">
              <ToastContainer/>
             <div className="upload">
                 <input type="file" name="file" id="file_up" onChange={handleUpload}/>
@@ -264,6 +264,7 @@ function CreateTheater() {
             </div>
 
             <form onSubmit={handleSubmit}>
+                <h1>ADD A THEATER</h1>
                 <div className="row">
                     <label htmlFor="product_id">Theater ID</label>
                     <input type="text" name="_id" id="product_id" required
@@ -289,7 +290,7 @@ function CreateTheater() {
                     </select>
                 </div>
 
-                <button type="submit">{onEdit? "Update" : "Create"}</button>
+                <button className='btn btn-outline-success' type="submit">{onEdit? "Update" : "Create"}</button>
             </form>
         </div>
     )

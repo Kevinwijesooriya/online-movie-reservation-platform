@@ -77,10 +77,10 @@
     padding: 0 5px;
 }
 .create_product form button{
-    width: 200px;
+    width: 100%;
     height: 40px;
-    background: #555;
-    color: white;
+   
+
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 700;

@@ -15,17 +15,17 @@ function BtnRender({theater, deleteTheater}) {
             {
                 isAdmin ? 
                 <>
-                    <Link id="btn_buy" to="#!" 
+                    <Link id="btn_buy" className='btn btn-outline-danger' to="#!" 
                     onClick={() =>deleteTheater(theater._id, theater.images.public_id)}>
                         Delete
                     </Link>
-                    <Link id="btn_view" to={`/edit_theater/${theater._id}`}>
+                    <Link id="btn_view" className='btn btn-outline-success' to={`/edit_theater/${theater._id}`}>
                         Edit
                     </Link>
                 </>
                 : <>
 
-                    <Link id="btn_view" to={`/theaterdetail/${theater._id}`}>
+                    <Link id="btn_view" className='btn btn-outline-success' to={`/theaterdetail/${theater._id}`}>
                         View
                     </Link>
                 </>

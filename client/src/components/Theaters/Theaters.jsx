@@ -99,8 +99,8 @@ function Theaters() {
             <div className="delete-all">
                 <span>Select all</span>
                 <input type="checkbox" checked={isCheck} onChange={checkAll} />
-                <button onClick={deleteAll}>Delete ALL</button>
-                <Link to={"/create_theater"}>Add a Theater</Link>
+                <button className='btn btn-outline-danger' onClick={deleteAll}>Delete ALL</button>
+                <Link className='btn btn-outline-success' to={"/create_theater"}>Add a Theater</Link>
             </div>
         }
 

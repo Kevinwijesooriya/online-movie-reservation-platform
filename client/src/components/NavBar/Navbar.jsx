@@ -32,7 +32,7 @@ const Navbar = () => {
         {!isAdmin&&
         <>
          <li class="nav-item">
-          <a class="nav-link" href="/theaters">t</a>
+          <a class="nav-link" href="/theaters">Theaters</a>
         </li>
         </>}
         <li class="nav-item">
