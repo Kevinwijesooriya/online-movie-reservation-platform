@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import ViewMovies from './movie/ViewMovies.js';
+//import ViewMovies from './movie/ViewMovies.js';
 import MovieCard from './Cards/MovieCard.js';
 import NotFound from './utils/not_found/NotFound.jsx';
 import Login from './Login/Login.jsx';
@@ -13,6 +13,8 @@ import Theaters from './Theaters/Theaters.jsx';
 import Locations from './Locations/Locations.jsx';
 import CreateTheater from './CreateTheater/CreateTheater.jsx';
 import Categories from './Categories/Categories.jsx';
+import CreateMovie from './CreateMovie/CreateMovie.jsx';
+import Movies from './Movie/Movies.jsx';
 
 
 const MainPages = () => {
@@ -22,8 +24,8 @@ const MainPages = () => {
   return (
          
         <Routes>
-              <Route path="/" element={<MovieCard />} />
-              <Route path="/movie-view" element={<ViewMovies />} />
+              <Route path="/" element={<Movies />} />
+              {/* <Route path="/movie-view" element={<ViewMovies />} /> */}
               <Route path="/login" element={isLogged ? <Navigate to={"/"}/> : <Login/>} />
               <Route path="/register" element={isLogged ? <Navigate to={"/"}/> : <Register/>} />
               <Route path="/profile" element={isLogged ?  <Profile/>: <NotFound/>}/>
@@ -34,6 +36,8 @@ const MainPages = () => {
               <Route path="//addCategories" element={isAdmin ? <Categories/> : <NotFound/>} />
               <Route path="/create_theater" element={isAdmin ? <CreateTheater/> : <NotFound/>} />
               <Route path="/edit_theater/:id" element={isAdmin ? <CreateTheater/> : <NotFound/>} />
+              <Route path="/create_movie" element={isAdmin ? <CreateMovie/> : <NotFound/>} />
+              <Route path="/edit_movie/:id" element={isAdmin ? <CreateMovie/> : <NotFound/>} />
               
         </Routes>
 

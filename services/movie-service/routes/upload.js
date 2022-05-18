@@ -1,11 +1,9 @@
-const router = require('express').Router()
+import { Router } from "express";
 import { config, v2 } from 'cloudinary'
-import auth from '../middleware/auth'
-import authAdmin from '../middleware/authAdmin'
+import auth from '../middleware/auth.js'
+import authAdmin from '../middleware/authAdmin.js'
 import { unlink } from 'fs'
-
-
-//TODO: npm i cloudinary , copy the meddleware from user-service and past it
+const movieuploadRoute = Router();
 
 
 // we will upload image on cloudinary
@@ -16,7 +14,7 @@ config({
 })
 
 // Upload image only admin can use
-router.post('/upload',auth , authAdmin, (req, res) =>{
+movieuploadRoute.post('/movieimageupload',auth , authAdmin, (req, res) =>{
     try {
         if(!req.files || Object.keys(req.files).length === 0)
             return res.status(400).json({msg: 'No files were uploaded.'})
@@ -47,7 +45,7 @@ router.post('/upload',auth , authAdmin, (req, res) =>{
 })
 
 // Delete image only admin can use
-router.post('/destroy',auth , authAdmin, (req, res) =>{
+movieuploadRoute.post('/movieimagedestroy',auth , authAdmin, (req, res) =>{
     try {
         const {public_id} = req.body;
         if(!public_id) return res.status(400).json({msg: 'No images Selected'})
@@ -71,4 +69,4 @@ const removeTmp = (path) =>{
     })
 }
 
-export default router
+export default movieuploadRoute
