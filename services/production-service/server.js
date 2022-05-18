@@ -33,7 +33,7 @@ app.use(cors());
 //routes
 app.use("/movies",MovieRouter);
 
-const port = process.env.PORT || 5010;
+const port = process.env.PORT || 5030;
 
 app.listen(port, () => {
   `Server running on port ${port} 🔥`;
