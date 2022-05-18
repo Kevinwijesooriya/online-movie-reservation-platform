@@ -306,7 +306,7 @@ function CreateMovie() {
                     </select>
                 </div>
 
-                <button type="submit">{onEdit? "Update" : "Create"}</button>
+                <button className='btn btn-outline-success' type="submit">{onEdit? "Update" : "Create"}</button>
             </form>
         </div>
     )

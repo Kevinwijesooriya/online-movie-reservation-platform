@@ -22,7 +22,7 @@ function MovieCard({movie, isAdmin, deleteMovie, handleCheck}) {
         <CardMedia
           component="img"
           height="140"
-          //image={movie.images.url}
+          image={movie.images.url}
           alt={movie.title}
         />
         <CardContent>
