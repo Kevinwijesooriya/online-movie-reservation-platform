@@ -19,7 +19,7 @@ function BtnRender({theater, deleteTheater}) {
                     onClick={() =>deleteTheater(theater._id, theater.images.public_id)}>
                         Delete
                     </Link>
-                    <Link id="btn_view" className='btn btn-outline-success' to={`/edit_theater/${theater._id}`}>
+                    <Link id="btn_view" className='btn btn-outline-warning' to={`/edit_theater/${theater._id}`}>
                         Edit
                     </Link>
                 </>

@@ -2,12 +2,13 @@ import {} from "dotenv/config";
 import express, { json } from "express";
 import mongoose from "mongoose";
 import cors from "cors";
-import cookieParser from "cookie-parser";
+
 
 const { connect } = mongoose;
 
 //route imports
 import MovieRouter from "./routes/movies.js";
+import catelogRouter from './routes/catelogRouter.js';
 
 // Connect MongoDB.
 const URI = process.env.MONGODB_URL;
@@ -28,12 +29,12 @@ connect(
 
 const app = express();
 app.use(json());
-app.use(cookieParser());
 app.use(cors());
 //routes
 app.use("/movies",MovieRouter);
+app.use('/api',catelogRouter);
 
-const port = process.env.PORT || 5010;
+const port = process.env.PORT || 5000;
 
 app.listen(port, () => {
   `Server running on port ${port} 🔥`;

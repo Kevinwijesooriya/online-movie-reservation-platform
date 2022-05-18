@@ -12,6 +12,7 @@ import ChangePassword from './ChangePassword/ChangePassword.jsx';
 import Theaters from './Theaters/Theaters.jsx';
 import Locations from './Locations/Locations.jsx';
 import CreateTheater from './CreateTheater/CreateTheater.jsx';
+import Categories from './Categories/Categories.jsx';
 
 
 const MainPages = () => {
@@ -30,8 +31,10 @@ const MainPages = () => {
               <Route path="/changePassword" element={isLogged ?  <ChangePassword/>: <NotFound/>}/>
               <Route path="/theaters" element={<Theaters/>}/>
               <Route path="/locations" element={isAdmin ? <Locations/> : <NotFound/>} />
+              <Route path="//addCategories" element={isAdmin ? <Categories/> : <NotFound/>} />
               <Route path="/create_theater" element={isAdmin ? <CreateTheater/> : <NotFound/>} />
               <Route path="/edit_theater/:id" element={isAdmin ? <CreateTheater/> : <NotFound/>} />
+              
         </Routes>
 
   )
