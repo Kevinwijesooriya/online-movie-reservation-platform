@@ -20,7 +20,7 @@ const ticketController ={
 
             const {_id, name, email, phone} = user;
 
-            const newTicket = new Orders({
+            const newTicket = new Tickets({
                 user_id: _id, name, email, phone, cart, total
             })
 

@@ -27,6 +27,10 @@ const ticketSchema = new Schema(
       type: Array,
       required: true
     },
+    isPaid:{
+      type: Boolean,
+      default: false
+    },
     status:{
       type: Boolean,
       default: false
