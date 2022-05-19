@@ -109,6 +109,7 @@ function CreateMovie() {
 
             setLoading(true);
             try {
+                // When Integrated using WSO2 Use http://localhost:8290/movies/movieImageUpload
                 const res = await axios.post('http://localhost:5000/api/movieimageupload', formData, {
                     headers: {'content-type': 'multipart/form-data', Authorization: token}
                 })
@@ -163,6 +164,7 @@ function CreateMovie() {
                 progress: undefined,
                 });
             setLoading(true)
+            // When Integrated using WSO2 Use http://localhost:8290/movies/movieImageDestroy
             await axios.post('http://localhost:5000/api/movieimagedestroy', {public_id: images.public_id}, {
                 headers: {Authorization: token}
             })
@@ -236,6 +238,7 @@ function CreateMovie() {
                 });
 
             if(onEdit){
+                // When Integrated using WSO2 Use http://localhost:8290/movies/updateMovie
                 const res=await axios.put(`http://localhost:5000/api/updateMovie/${movie._id}`, {...movie, images}, {
                     headers: {Authorization: token}
                 })
@@ -250,6 +253,7 @@ function CreateMovie() {
                     });
             }else{
                 console.log(movie,images)
+                // When Integrated using WSO2 Use http://localhost:8290/movies/addMovies
                 const res = await axios.post('http://localhost:5000/api/addMovie', {...movie, images}, {
                     headers: {Authorization: token}
                 })

@@ -21,6 +21,7 @@ function Locations() {
         try {
             if(onEdit){
                 try {
+                    // When Integrated using WSO2 Use http://localhost:8290/theaters/updateTheaterLocations
                     const res = await axios.put(`http://localhost:5080/api/location/${id}`, {location: location}, {
                         headers: {Authorization: token}
                     })
@@ -48,6 +49,7 @@ function Locations() {
                
             }else{
                 try {
+                    // When Integrated using WSO2 Use http://localhost:8290/theaters/addTheaterLocations
                     const res = await axios.post('http://localhost:5080/api/location', {location: location}, {
                         headers: {Authorization: token}
                     })
@@ -92,6 +94,7 @@ function Locations() {
 
     const deleteLocation = async id =>{
         try {
+            // When Integrated using WSO2 Use http://localhost:8290/theaters/deleteTheaterLocation
             const res = await axios.delete(`http://localhost:5080/api/location/${id}`, {
                 headers: {Authorization: token}
             })

@@ -15,6 +15,7 @@ function TheatersAPI() {
         const getTheaters = async () => {
             try {
             const res = await axios.get(`http://localhost:5080/api/theaters?limit=${page*9}&${location}&${sort}&title[regex]=${search}`)
+            // When Integrated using WSO2 Use http://localhost:8290/theaters/getTheaters
             setTheaters(res.data.theaters)
             setResult(res.data.result)
           

@@ -18,6 +18,7 @@ const Tickects = () => {
       const getTickets = async () =>{
           if (isAdmin) {
               try {
+                  // When Integrated using WSO2 Use http://localhost:8290/tickets/getTickets
                   const res = await axios.get('http://localhost:5090/api/tickets')
                   setTickets(res.data)
                  
@@ -30,6 +31,7 @@ const Tickects = () => {
                  
                   //console.log(userDetails.email);
                   if(userDetails.email){
+                      // When Integrated using WSO2 Use http://localhost:8290/tickets/getMyTicket
                       const res = await axios.get(`http://localhost:5090/api/mytickets/${userDetails.email}`,{
                       headers: {Authorization: token}
                   })
