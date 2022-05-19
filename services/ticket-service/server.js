@@ -4,10 +4,12 @@ import mongoose from "mongoose";
 import cors from "cors";
 
 
+
 const { connect } = mongoose;
 
 //route imports
 import ticketRoute from "./routes/ticket.js";
+import paymentRoute from "./routes/payment.js";
 
 // Connect MongoDB.
 const URI = process.env.MONGODB_URL;
@@ -32,6 +34,8 @@ app.use(cors());
 
 //routes
 app.use(ticketRoute);
+app.use(paymentRoute);
+
 
 
 const port = process.env.PORT || 5090;
