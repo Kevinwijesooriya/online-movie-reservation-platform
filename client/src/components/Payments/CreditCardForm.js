@@ -15,7 +15,7 @@ const CreditCardForm = ({data}) => {
   const payClick =async()=>{
     try {
       const res = await axios.post("http://localhost:5090/api/payment",data);
-      toast.success(err.response.data.msg, {
+      toast.success(res.data.msg, {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -24,9 +24,11 @@ const CreditCardForm = ({data}) => {
         draggable: true,
         progress: undefined,
         });
+        window.location.href = "/ticketsList";
       
     } catch (error) {
-      toast.error(err.response.data.msg, {
+      console.log(error);
+      toast.error(error.response.data.msg, {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -159,7 +161,7 @@ const CreditCardForm = ({data}) => {
               size={"block"}
               data-testid="validateButton"
               id="validateButton"
-              type="submit"
+              disabled={errors.variant!="success"}
              onClick={payClick}
             >
               PAY

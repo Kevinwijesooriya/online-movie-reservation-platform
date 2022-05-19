@@ -8,7 +8,7 @@ function TicketsAPI() {
     const [callback, setCallback] = useState(false)
     const [isAdmin] = state.userAPI.isAdmin
     const [userDetails] = state.userAPI.user;
-    console.log(tickets);
+
     console.log("User Details---",userDetails);
    
 

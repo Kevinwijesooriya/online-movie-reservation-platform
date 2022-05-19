@@ -72,10 +72,6 @@ const Payment = () => {
       <h3>Ticket ID: {ticketDetail._id}</h3>
       <h3>Amount: {ticketDetail.total}LKR</h3>
       <CreditCardForm data={data}/>
-      <center>
-      <button className='btn btn-outline-success'>Proceed</button>
-      </center>
-    
       </div>
   )
 }

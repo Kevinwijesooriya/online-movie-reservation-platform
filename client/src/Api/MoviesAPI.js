@@ -16,7 +16,7 @@ function MoviesAPI() {
             const res = await axios.get(`http://localhost:5000/api/movies?limit=${page*9}&${category}&${sort}&title[regex]=${search}`)
             setMovies(res.data.movies)
             setResult(res.data.result)
-            console.log(res.data.movies);
+           
         }
         getMovies()
     },[callback, category, sort, search, page])
