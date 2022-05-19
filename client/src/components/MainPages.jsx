@@ -21,6 +21,7 @@ import MovieDetails from './MovieDetails/MovieDetails.jsx';
 import ContactUs from './ContactUs/ContactUs.jsx';
 import Cart from './Cart/Cart.jsx';
 import Tickects from './Tickets/Tickects.jsx';
+import QRgenerator from './Ticket/QRgenerator.js';
 import Payment from './Payments/Payment.jsx';
 //edit
 
@@ -47,7 +48,8 @@ const MainPages = () => {
               <Route path="/create_movie" element={isAdmin ? <CreateMovie/> : <NotFound/>} />
               <Route path="/edit_movie/:id" element={isAdmin ? <CreateMovie/> : <NotFound/>} />
               <Route path="/MoviesTicket" element={<MoviesTicket/>}/>
-              <Route path="/TicketPrint" element={<TicketPrint/>}/>
+              <Route path="/viewTicket/:id" element={<QRgenerator/>}/>
+              <Route path="/viewTicket/:id/TicketPrint" element={<TicketPrint/>}/>
               
               <Route path="/moviedetail/:id" element={<MovieDetails/>}/>
               <Route path="/contactUs" element={<ContactUs/>}/>
