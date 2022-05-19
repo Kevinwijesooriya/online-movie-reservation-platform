@@ -43,15 +43,12 @@ const MainPages = () => {
               <Route path="/edit_theater/:id" element={isAdmin ? <CreateTheater/> : <NotFound/>} />
               <Route path="/create_movie" element={isAdmin ? <CreateMovie/> : <NotFound/>} />
               <Route path="/edit_movie/:id" element={isAdmin ? <CreateMovie/> : <NotFound/>} />
-<<<<<<< HEAD
               <Route path="/MoviesTicket" element={<MoviesTicket/>}/>
               <Route path="/TicketPrint" element={<TicketPrint/>}/>
               
-=======
               <Route path="/moviedetail/:id" element={<MovieDetails/>}/>
               <Route path="/contactUs" element={<ContactUs/>}/>
               <Route path="/cart" element={<Cart/>}/>
->>>>>>> 3a0168ecc8502bca3a06435cb7cf183ae81750ce
         </Routes>
 
   )
