@@ -5,12 +5,42 @@ import { Button, Form, Alert, Row, Col } from "react-bootstrap";
 import "./CreditCardForm.css";
 import Cards from "react-credit-cards";
 import "react-credit-cards/es/styles-compiled.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import axios from "axios";
 
 
-const CreditCardForm = () => {
+const CreditCardForm = ({data}) => {
   const { handleChange, handleFocus, handleSubmit, values, errors } = useForm();
+  const payClick =async()=>{
+    try {
+      const res = await axios.post("http://localhost:5090/api/payment",data);
+      toast.success(err.response.data.msg, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
+      
+    } catch (error) {
+      toast.error(err.response.data.msg, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
+    }
+  }
+  console.log(data);
   return (
     <div>
+        <ToastContainer/>
       <div className="container">
         <div className="box justify-content-center align-items-center">
           <div className="formDiv">
@@ -36,7 +66,7 @@ const CreditCardForm = () => {
                 onFocus={handleFocus}
                 isValid={errors.cname}
               />
-            </Form.Group>
+            </Form.Group><br/>
             <Form.Group>
               <Form.Control
                 type="number"
@@ -49,7 +79,7 @@ const CreditCardForm = () => {
                 onFocus={handleFocus}
                 isValid={errors.cnumber}
               />
-            </Form.Group>
+            </Form.Group><br/>
             <Row>
               <Col>
                 <Form.Group>
@@ -81,7 +111,7 @@ const CreditCardForm = () => {
                   />
                 </Form.Group>
               </Col>
-            </Row>
+            </Row><br/>
             <Row>
               <Col>
                 <Form.Group>
@@ -113,7 +143,8 @@ const CreditCardForm = () => {
                   />
                 </Form.Group>
               </Col>
-            </Row>
+            </Row><br/>
+            <center>
             <Button
               size={"block"}
               data-testid="validateButton"
@@ -122,7 +153,18 @@ const CreditCardForm = () => {
              
             >
               Validate
+            </Button><br/><br/>
+            
+            <Button
+              size={"block"}
+              data-testid="validateButton"
+              id="validateButton"
+              type="submit"
+             onClick={payClick}
+            >
+              PAY
             </Button>
+            </center>
           </Form>
           </div>
           <Alert
