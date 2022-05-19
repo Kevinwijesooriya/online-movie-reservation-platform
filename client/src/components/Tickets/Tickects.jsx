@@ -83,7 +83,7 @@ const Tickects = () => {
                             <td>{new Date(items.createdAt).toLocaleDateString()}</td>
                             <td>{items.status?<>Conformed</>:<>Pending</>}</td>
                             <td><Link className='btn btn-outline-warning' to={`/ticketDetail/${items._id}`}>View</Link></td>
-                            <td>{items.isPaid?<><Link className='btn btn-outline-success' to={`/viewTicket/${items._id}`}>View Ticket</Link></>:<>{!isAdmin?<Link className='btn btn-outline-success' to={`/viewTicket/${items._id}`}>Pay</Link>:<></>}</>}</td>
+                            <td>{items.isPaid?<><Link className='btn btn-outline-success' to={`/viewTicket/${items._id}`}>View Ticket</Link></>:<>{!isAdmin?<Link className='btn btn-outline-success' to={`/payment/${items._id}`}>Pay</Link>:<></>}</>}</td>
                             
                         </tr>
                     ))
