@@ -2,12 +2,14 @@ import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import logo from "../../assets/logo.png";
 import { GlobalState } from '../../GlobalState';
+import Cart from './icon/cart.svg';
 
 const Navbar = () => {
     const state = useContext(GlobalState);
     const [isLogged] = state.userAPI.isLogged;
     const [isAdmin] = state.userAPI.isAdmin;
     const [userDetails] = state.userAPI.user;
+    const [cart] = state.userAPI.cart;
 
     
 
@@ -52,10 +54,20 @@ const Navbar = () => {
           <Link to={"/bookings"}>Bookings Managements</Link>
         </>}
           <Link to={"/profile"}>{userDetails.name}</Link>
+          {
+                isAdmin ? '' 
+                :<div className="cart-icon">
+                    <span>{cart.length}</span>
+                    <Link to="/cart">
+                        <img src={Cart} alt="" width="30" />
+                    </Link>
+                </div>
+            }
         </>:<>
         
         <button class="btn btn-outline-success" onClick={onClickHandler} type="submit">Login</button>
         </>}
+
         
       </form>
     </div>
