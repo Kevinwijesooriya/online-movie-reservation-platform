@@ -4,6 +4,7 @@ const { verify } = pkg;
 const auth = (req, res, next) =>{
     try {
         const token = req.header("Authorization")
+        console.log(token);
         if(!token) return res.status(400).json({msg: "Invalid Authentication"})
 
         verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) =>{

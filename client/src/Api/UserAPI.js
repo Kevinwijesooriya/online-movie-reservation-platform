@@ -7,12 +7,14 @@ function UserAPI(token) {
     const [userDetails, setUserDetails] = useState("")
     const [cart, setCart] = useState([])
     const [tickets, setTickets] = useState([])
-      
+    
+    
     useEffect(() =>{
         if(token){
             //console.log(token);
             const getUser = async () =>{
                 try {
+                  
                     const res = await axios.get('http://localhost:5010/api/user/infor', {
                         headers: {Authorization: token}
                     })
@@ -36,35 +38,7 @@ function UserAPI(token) {
             
         }
     },[token])
-    useEffect(() =>{
-        const getTickets = async () =>{
-            if (isAdmin) {
-                try {
-                    const res = await axios.get('http://localhost:5090/api/tickets')
-                    setTickets(res.data)
-                   
-                } catch (error) {
-                    console.log(error)
-                    
-                }
-            } else {
-                try {
-                    
-                    const res = await axios.get(`http://localhost:5090/api/mytickets/${userDetails._id}`)
-                    setTickets(res.data)
-                    console.log(res);
-                } catch (error) {
-                    console.log(error)
-                    
-                }
-                
-            }
-           
-            
-        }
-
-        getTickets()
-    },[])
+   
 
     const addCart = async (movie,total,cartData) => {
         if(!isLogged) return alert("Please login to continue buying")
