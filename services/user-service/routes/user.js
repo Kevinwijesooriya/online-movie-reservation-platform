@@ -9,5 +9,6 @@ userRoute.get("/api/auth/signout", userController.signout);
 userRoute.post("/api/user/updateInfo",auth, userController.update);
 userRoute.post("/api/user/resetPassword", userController.resetPassword);
 userRoute.get('/api/user/infor', auth,  userController.getUser)
+userRoute.patch('/api/user/addcart', auth,  userController.addCart)
 
 export default userRoute;

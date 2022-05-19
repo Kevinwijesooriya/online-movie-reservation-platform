@@ -54,6 +54,24 @@ width: 100%;
   overflow:hidden;
 
 }
+
+.formBody2{
+  width: 60%;
+  margin: auto;
+  align-items: center;
+  padding: 20px;
+  box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
+  background: rgba(3, 3, 3, 0.5);
+  color:azure;
+  overflow:hidden;
+  animation: mymove 10s infinite;
+}
+
+@keyframes mymove {
+  from {box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;}
+  to {box-shadow: rgba(0, 247, 53, 0.35) 0px 5px 15px;}
+}
+
 main{
   margin-top: 2rem;
   margin-bottom: 1rem;
@@ -116,4 +134,44 @@ a:hover{
   right: -10px;
   padding: 5px 7px;
   font-size: 10px;
+}
+.moviedetail{
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.leftSide{
+ width: 60%;
+
+ color: rgb(255, 255, 255);
+ display: inline-block;
+ align-items: center;
+}
+.leftSide img{
+  width: 70%;
+  
+}
+
+.rightSide{
+  width: 35%;
+  right: 0;
+
+}
+
+.sticky{
+  position: fixed;
+  
+}
+
+.txt1movieD{
+  font-size: 40px;
+}
+.txt2movieD{
+  font-size: 30px;
+}
+.txt3movieD{
+  font-size: 18px;
 }

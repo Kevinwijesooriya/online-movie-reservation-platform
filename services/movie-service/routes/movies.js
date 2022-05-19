@@ -45,35 +45,34 @@ class APIfeatures {
   }
 }
 
-router.route("/addMovie").post((req, res) => {
-  const data = req.body;
-  const { title, description, catelog, images, cast, duration, availableTheaters } =data;
-  console.log("🚀 ~ file: movies.js ~ line 51 ~ router.route ~ data", data)
+router.route("/addMovie").post(async(req, res) => {
+  try {
+    const data = req.body;
+    const { title, description, catelog, images, cast, duration, availableTheaters } =data;
+    console.log("🚀 ~ file: movies.js ~ line 51 ~ router.route ~ data", data)
+    
+    if(!images) return res.status(400).json({msg: "No image upload"});
   
-  if(!images) return res.status(400).json({msg: "No image upload"});
-
-  const newMovie = new Movie({
-    title,
-    description,
-    catelog,
-    images,
-    cast,
-    duration,
-    availableTheaters,
-  });
-
-  newMovie
-    .save()
-    .then(() => {
-      res.status(200).send({ status: "Movie added" });
-      console.log("Movie added");
-    })
-    .catch((err) => {
-      res
-        .status(500)
-        .send({ status: "Error with adding movie ", error: err.message });
-      console.log("Error with adding movie :", err);
+    const newMovie = new Movie({
+      title,
+      description,
+      catelog,
+      images,
+      cast,
+      duration,
+      availableTheaters,
     });
+  
+    await newMovie.save();
+    res.json({msg: "Created a Movie"})
+    
+  } catch (error) {
+    return res.status(500).json({msg: error.message})
+    //console.log(error)
+  }
+ 
+   
+    
 });
 
 router.route("/movies").get(async(req, res) => {
