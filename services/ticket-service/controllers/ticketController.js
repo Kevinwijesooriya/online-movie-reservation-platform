@@ -21,6 +21,16 @@ const ticketController ={
             return res.status(500).json({msg: err.message})
         }
     },
+    MyTicket:async(req, res) =>{
+        try {
+            let ticketId = req.params.id;
+            // console.log(req.params.email);
+            const ticket = await Tickets.findById(ticketId)
+            res.json( ticket)
+        } catch (err) {
+            return res.status(500).json({msg: err.message})
+        }
+    },
     createTicket: async(req, res) => {
         try {
             const user = await Users.findById(req.user.id).select('name phone email')
