@@ -13,9 +13,9 @@ const ticketController ={
     },
     getMyTickets:async(req, res) =>{
         try {
-            const user = await Users.findById(req.params.id)
-            if(!user) return res.status(400).json({msg: "User does not exist."})
-            const tickets = await Tickets.findOne({user_id: user._id})
+            
+            console.log(req.params.email);
+            const tickets = await Tickets.find({email: req.params.email})
             res.json( tickets)
         } catch (err) {
             return res.status(500).json({msg: err.message})
