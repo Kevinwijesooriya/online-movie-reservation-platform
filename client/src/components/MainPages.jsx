@@ -16,6 +16,7 @@ import CreateTheater from './CreateTheater/CreateTheater.jsx';
 import Categories from './Categories/Categories.jsx';
 import CreateMovie from './CreateMovie/CreateMovie.jsx';
 import Movies from './Movie/Movies.jsx';
+import TicketPrint from './Ticket/TicketPrint.js';
 //edit
 
 const MainPages = () => {
@@ -39,6 +40,8 @@ const MainPages = () => {
               <Route path="/edit_theater/:id" element={isAdmin ? <CreateTheater/> : <NotFound/>} />
               <Route path="/create_movie" element={isAdmin ? <CreateMovie/> : <NotFound/>} />
               <Route path="/edit_movie/:id" element={isAdmin ? <CreateMovie/> : <NotFound/>} />
+              <Route path="/MoviesTicket" element={<MoviesTicket/>}/>
+              <Route path="/TicketPrint" element={<TicketPrint/>}/>
               
         </Routes>
 
