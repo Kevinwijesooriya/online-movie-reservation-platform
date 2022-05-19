@@ -31,9 +31,11 @@ function Theaters() {
     const deleteTheater = async(id, public_id) => {
         try {
             setLoading(true)
+            // When Integrated using WSO2 Use http://localhost:8290/movies/movieImageDestroy
             const destroyImg = axios.post('http://localhost:5080/api/destroy', {public_id},{
                 headers: {Authorization: token}
             })
+            // When Integrated using WSO2 Use http://localhost:8290/theaters/deleteTheater
             const deletetheater = axios.delete(`http://localhost:5080/api/theaters/${id}`, {
                 headers: {Authorization: token}
             })

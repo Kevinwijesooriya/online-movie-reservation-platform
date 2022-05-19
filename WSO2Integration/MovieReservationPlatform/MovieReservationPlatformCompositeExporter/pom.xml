@@ -14,19 +14,46 @@
   <name>MovieReservationPlatformCompositeExporter</name>
   <description>MovieReservationPlatformCompositeExporter</description>
   <properties>
-    <com.example.api_._reservation>capp/EnterpriseServiceBus</com.example.api_._reservation>
+    <com.example.endpoint_._movieImageUpload>capp/EnterpriseServiceBus</com.example.endpoint_._movieImageUpload>
+    <com.example.api_._users>capp/EnterpriseServiceBus</com.example.api_._users>
+    <com.example.endpoint_._updateTheaterLocation>capp/EnterpriseServiceBus</com.example.endpoint_._updateTheaterLocation>
+    <com.example.endpoint_._addTheaterLocation>capp/EnterpriseServiceBus</com.example.endpoint_._addTheaterLocation>
+    <com.example.endpoint_._getUser>capp/EnterpriseServiceBus</com.example.endpoint_._getUser>
+    <com.example.endpoint_._updateMovieCategory>capp/EnterpriseServiceBus</com.example.endpoint_._updateMovieCategory>
+    <com.example.endpoint_._movieDelete>capp/EnterpriseServiceBus</com.example.endpoint_._movieDelete>
+    <com.example.api_._tickets>capp/EnterpriseServiceBus</com.example.api_._tickets>
+    <com.example.metadata_._tickets_metadata>capp/EnterpriseServiceBus</com.example.metadata_._tickets_metadata>
+    <com.example.endpoint_._getTickets>capp/EnterpriseServiceBus</com.example.endpoint_._getTickets>
+    <com.example.endpoint_._userLogin>capp/EnterpriseServiceBus</com.example.endpoint_._userLogin>
+    <com.example.metadata_._reservation_swagger>capp/EnterpriseServiceBus</com.example.metadata_._reservation_swagger>
+    <com.example.endpoint_._getTheaters>capp/EnterpriseServiceBus</com.example.endpoint_._getTheaters>
+    <com.example.endpoint_._getMovieCategories>capp/EnterpriseServiceBus</com.example.endpoint_._getMovieCategories>
+    <com.example.metadata_._movies_metadata>capp/EnterpriseServiceBus</com.example.metadata_._movies_metadata>
+    <com.example.metadata_._theaters_swagger>capp/EnterpriseServiceBus</com.example.metadata_._theaters_swagger>
+    <com.example.endpoint_._deleteTheater>capp/EnterpriseServiceBus</com.example.endpoint_._deleteTheater>
+    <com.example.endpoint_._addMovie>capp/EnterpriseServiceBus</com.example.endpoint_._addMovie>
+    <com.example.endpoint_._addCart>capp/EnterpriseServiceBus</com.example.endpoint_._addCart>
     <com.example.metadata_._reservation_metadata>capp/EnterpriseServiceBus</com.example.metadata_._reservation_metadata>
     <com.example.metadata_._users_metadata>capp/EnterpriseServiceBus</com.example.metadata_._users_metadata>
+    <com.example.endpoint_._movieImageDestroy>capp/EnterpriseServiceBus</com.example.endpoint_._movieImageDestroy>
     <com.example.endpoint_._getMovies>capp/EnterpriseServiceBus</com.example.endpoint_._getMovies>
+    <com.example.metadata_._tickets_swagger>capp/EnterpriseServiceBus</com.example.metadata_._tickets_swagger>
+    <com.example.endpoint_._userRegistration>capp/EnterpriseServiceBus</com.example.endpoint_._userRegistration>
+    <com.example.endpoint_._updateMovie>capp/EnterpriseServiceBus</com.example.endpoint_._updateMovie>
     <com.example.api_._movies>capp/EnterpriseServiceBus</com.example.api_._movies>
+    <com.example.endpoint_._deleteTheaterLocation>capp/EnterpriseServiceBus</com.example.endpoint_._deleteTheaterLocation>
     <com.example.metadata_._movies_swagger>capp/EnterpriseServiceBus</com.example.metadata_._movies_swagger>
-    <com.example.api_._users>capp/EnterpriseServiceBus</com.example.api_._users>
-    <com.example.endpoint_._getReservations>capp/EnterpriseServiceBus</com.example.endpoint_._getReservations>
-    <com.example.endpoint_._loginUser>capp/EnterpriseServiceBus</com.example.endpoint_._loginUser>
+    <com.example.endpoint_._addMovieCategory>capp/EnterpriseServiceBus</com.example.endpoint_._addMovieCategory>
+    <com.example.endpoint_._addTheaters>capp/EnterpriseServiceBus</com.example.endpoint_._addTheaters>
+    <com.example.endpoint_._updateUser>capp/EnterpriseServiceBus</com.example.endpoint_._updateUser>
+    <com.example.endpoint_._deleteTicket>capp/EnterpriseServiceBus</com.example.endpoint_._deleteTicket>
     <com.example.metadata_._users_swagger>capp/EnterpriseServiceBus</com.example.metadata_._users_swagger>
-    <com.example.metadata_._reservation_swagger>capp/EnterpriseServiceBus</com.example.metadata_._reservation_swagger>
+    <com.example.api_._theaters>capp/EnterpriseServiceBus</com.example.api_._theaters>
+    <com.example.endpoint_._getMyTicket>capp/EnterpriseServiceBus</com.example.endpoint_._getMyTicket>
+    <com.example.endpoint_._updateTheater>capp/EnterpriseServiceBus</com.example.endpoint_._updateTheater>
+    <com.example.endpoint_._userPasswordReset>capp/EnterpriseServiceBus</com.example.endpoint_._userPasswordReset>
+    <com.example.metadata_._theaters_metadata>capp/EnterpriseServiceBus</com.example.metadata_._theaters_metadata>
     <artifact.types>jaggery/app=zip,synapse/priority-executor=xml,synapse/inbound-endpoint=xml,service/rule=aar,synapse/message-store=xml,event/stream=json,service/meta=xml,datasource/datasource=xml,synapse/proxy-service=xml,bpel/workflow=zip,synapse/sequence=xml,synapse/endpointTemplate=xml,carbon/application=car,wso2/gadget=dar,synapse/api=xml,synapse/event-source=xml,synapse/message-processors=xml,event/receiver=xml,lib/dataservice/validator=jar,synapse/template=xml,synapse/endpoint=xml,lib/carbon/ui=jar,lib/synapse/mediator=jar,synapse/metadata=yaml,event/publisher=xml,synapse/local-entry=xml,synapse/task=xml,webapp/jaxws=war,registry/resource=zip,synapse/configuration=xml,service/axis2=aar,synapse/lib=zip,synapse/sequenceTemplate=xml,event/execution-plan=siddhiql,service/dataservice=dbs,web/application=war,lib/library/bundle=jar</artifact.types>
-    <com.example.metadata_._movies_metadata>capp/EnterpriseServiceBus</com.example.metadata_._movies_metadata>
   </properties>
   <dependencies>
     <dependency>
@@ -60,12 +87,6 @@
       <type>yaml</type>
     </dependency>
     <dependency>
-      <groupId>com.example.api</groupId>
-      <artifactId>reservation</artifactId>
-      <version>1.0.0</version>
-      <type>xml</type>
-    </dependency>
-    <dependency>
       <groupId>com.example.metadata</groupId>
       <artifactId>users_metadata</artifactId>
       <version>1.0.0</version>
@@ -90,14 +111,182 @@
       <type>xml</type>
     </dependency>
     <dependency>
-      <groupId>com.example.endpoint</groupId>
-      <artifactId>getReservations</artifactId>
+      <groupId>com.example.metadata</groupId>
+      <artifactId>theaters_metadata</artifactId>
+      <version>1.0.0</version>
+      <type>yaml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.metadata</groupId>
+      <artifactId>theaters_swagger</artifactId>
+      <version>1.0.0</version>
+      <type>yaml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.api</groupId>
+      <artifactId>theaters</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.metadata</groupId>
+      <artifactId>tickets_metadata</artifactId>
+      <version>1.0.0</version>
+      <type>yaml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.metadata</groupId>
+      <artifactId>tickets_swagger</artifactId>
+      <version>1.0.0</version>
+      <type>yaml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.api</groupId>
+      <artifactId>tickets</artifactId>
       <version>1.0.0</version>
       <type>xml</type>
     </dependency>
     <dependency>
       <groupId>com.example.endpoint</groupId>
-      <artifactId>loginUser</artifactId>
+      <artifactId>addCart</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.endpoint</groupId>
+      <artifactId>addMovie</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.endpoint</groupId>
+      <artifactId>addTheaterLocation</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.endpoint</groupId>
+      <artifactId>addMovieCategory</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.endpoint</groupId>
+      <artifactId>addTheaters</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.endpoint</groupId>
+      <artifactId>deleteTheater</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.endpoint</groupId>
+      <artifactId>deleteTheaterLocation</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.endpoint</groupId>
+      <artifactId>deleteTicket</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.endpoint</groupId>
+      <artifactId>getMovieCategories</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.endpoint</groupId>
+      <artifactId>getMyTicket</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.endpoint</groupId>
+      <artifactId>getTheaters</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.endpoint</groupId>
+      <artifactId>getTickets</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.endpoint</groupId>
+      <artifactId>getUser</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.endpoint</groupId>
+      <artifactId>movieDelete</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.endpoint</groupId>
+      <artifactId>movieImageDestroy</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.endpoint</groupId>
+      <artifactId>movieImageUpload</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.endpoint</groupId>
+      <artifactId>updateMovie</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.endpoint</groupId>
+      <artifactId>updateMovieCategory</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.endpoint</groupId>
+      <artifactId>updateTheater</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.endpoint</groupId>
+      <artifactId>updateTheaterLocation</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.endpoint</groupId>
+      <artifactId>updateUser</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.endpoint</groupId>
+      <artifactId>userLogin</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.endpoint</groupId>
+      <artifactId>userPasswordReset</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.endpoint</groupId>
+      <artifactId>userRegistration</artifactId>
       <version>1.0.0</version>
       <type>xml</type>
     </dependency>

@@ -13,14 +13,12 @@ const Tickects = () => {
     const [token] = state.token
     const [ticketsList, setTicketList]=useState([]);
     const [userDetails] = state.userAPI.user;
-    
-    // useEffect(() => {
-    //   setTicketList(ticketsList);
-    // }, [tickets])
+
     useEffect(() =>{
       const getTickets = async () =>{
           if (isAdmin) {
               try {
+                  // When Integrated using WSO2 Use http://localhost:8290/tickets/getTickets
                   const res = await axios.get('http://localhost:5090/api/tickets')
                   setTickets(res.data)
                  
@@ -33,6 +31,7 @@ const Tickects = () => {
                  
                   //console.log(userDetails.email);
                   if(userDetails.email){
+                      // When Integrated using WSO2 Use http://localhost:8290/tickets/getMyTicket
                       const res = await axios.get(`http://localhost:5090/api/mytickets/${userDetails.email}`,{
                       headers: {Authorization: token}
                   })
@@ -54,24 +53,7 @@ const Tickects = () => {
   },[token,userDetails.email]);
 //console.log(tickets);
 
-const deleteTicket=async(id)=>{
-  try {
-   const res = await axios.delete(`http://localhost:5090/api/ticket/${id}`, {
-                headers: {Authorization: token}
-            })
-    
-  } catch (error) {
-    toast.error(error.response.data.msg, {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      });
-  }
-}
+
 
 
     
@@ -91,7 +73,7 @@ const deleteTicket=async(id)=>{
                         <th>Status</th>
                         <th></th>
                         <th></th>
-                        <th></th>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -103,8 +85,8 @@ const deleteTicket=async(id)=>{
                             <td>{new Date(items.createdAt).toLocaleDateString()}</td>
                             <td>{items.status?<>Conformed</>:<>Pending</>}</td>
                             <td><Link className='btn btn-outline-warning' to={`/ticketDetail/${items._id}`}>View</Link></td>
-                            <td>{items.isPaid?<><Link className='btn btn-outline-success' to={`/viewTicket/${items._id}`}>View Ticket</Link></>:<>{!isAdmin?<Link className='btn btn-outline-success' to={`/viewTicket/${items._id}`}>Pay</Link>:<></>}</>}</td>
-                            <td><button className='btn btn-outline-danger' onClick={deleteTicket(items._id)}>Delete</button></td>
+                            <td>{items.isPaid?<><Link className='btn btn-outline-success' to={`/viewTicket/${items._id}`}>View Ticket</Link></>:<>{!isAdmin?<Link className='btn btn-outline-success' to={`/payment/${items._id}`}>Pay</Link>:<></>}</>}</td>
+                            
                         </tr>
                     ))
                 

@@ -14,9 +14,10 @@ function MoviesAPI() {
     useEffect(() =>{
         const getMovies = async () => {
             const res = await axios.get(`http://localhost:5000/api/movies?limit=${page*9}&${category}&${sort}&title[regex]=${search}`)
+            // When Integrated using WSO2 Use http://localhost:8290/movies/getMovies
             setMovies(res.data.movies)
             setResult(res.data.result)
-            console.log(res.data.movies);
+           
         }
         getMovies()
     },[callback, category, sort, search, page])

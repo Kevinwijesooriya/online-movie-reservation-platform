@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/tickets" name="tickets" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET" url-mapping="/getTickets">
+        <inSequence>
+            <log>
+                <property name="Message" value="Get tickets"/>
+            </log>
+            <send>
+                <endpoint key="getTickets"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" url-mapping="/getMyTicket">
+        <inSequence>
+            <log>
+                <property name="Message" value="Get my ticket"/>
+            </log>
+            <send>
+                <endpoint key="getMyTicket"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="DELETE" url-mapping="/deleteTicket">
+        <inSequence>
+            <log>
+                <property name="Message" value="Delete ticket"/>
+            </log>
+            <send>
+                <endpoint key="deleteTicket"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+</api>

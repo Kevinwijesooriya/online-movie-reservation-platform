@@ -22,6 +22,7 @@ import ContactUs from './ContactUs/ContactUs.jsx';
 import Cart from './Cart/Cart.jsx';
 import Tickects from './Tickets/Tickects.jsx';
 import QRgenerator from './Ticket/QRgenerator.js';
+import Payment from './Payments/Payment.jsx';
 //edit
 
 const MainPages = () => {
@@ -38,6 +39,7 @@ const MainPages = () => {
               <Route path="/profile" element={isLogged ?  <Profile/>: <NotFound/>}/>
               <Route path="/forgetPassword" element={isLogged ?  <Navigate to={"/"}/>: <ResetPassword/>}/>
               <Route path="/changePassword" element={isLogged ?  <ChangePassword/>: <NotFound/>}/>
+              <Route path="/payment/:id" element={isLogged ?  <Payment/>: <NotFound/>}/>
               <Route path="/theaters" element={<Theaters/>}/>
               <Route path="/locations" element={isAdmin ? <Locations/> : <NotFound/>} />
               <Route path="//addCategories" element={isAdmin ? <Categories/> : <NotFound/>} />
