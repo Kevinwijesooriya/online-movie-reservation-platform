@@ -7,14 +7,14 @@ export default class TicketPrint extends Component {
         return (
             <div>TicketPrint
 <div ref={(el) => (this.componentRef = el)}>
-                    <MoviesTicket/>
+                    {/* <MoviesTicket/> */}
                     <QRgenerator />
                 </div>
                 <ReactToPrint
 
                     trigger={() => <button className="btn btn-dark" style={{ margintop: '400px' }}>
 
-                        <i class="fa fa-file-pdf-o" aria-hidden="true"></i> &nbsp;Get a Print of the Report</button >}
+                        <i class="fa fa-file-pdf-o" aria-hidden="true"></i> &nbsp;Get a Print of the Ticket</button >}
 
                     content={() => this.componentRef}
 
