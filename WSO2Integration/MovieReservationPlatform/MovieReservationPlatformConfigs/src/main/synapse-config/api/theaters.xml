@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/theaters" name="theaters" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST" url-mapping="/addTheater">
+        <inSequence>
+            <log>
+                <property name="Message" value="Add theater"/>
+            </log>
+            <send>
+                <endpoint key="addTheaters"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" url-mapping="/getTheaters">
+        <inSequence>
+            <log>
+                <property name="Message" value="Get Tickets"/>
+            </log>
+            <send>
+                <endpoint key="getTheaters"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="PUT" url-mapping="/updateTheater">
+        <inSequence>
+            <log>
+                <property name="Message" value="Update ticket"/>
+            </log>
+            <send>
+                <endpoint key="updateTheater"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" url-mapping="/deleteTheater">
+        <inSequence>
+            <log>
+                <property name="Message" value="Delete theater"/>
+            </log>
+            <send>
+                <endpoint key="deleteTheater"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" url-mapping="/addTheaterLocation">
+        <inSequence>
+            <log>
+                <property name="Message" value="Add theater location"/>
+            </log>
+            <send>
+                <endpoint key="addTheaterLocation"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="PUT" url-mapping="/updateTheaterLocations">
+        <inSequence>
+            <log>
+                <property name="Message" value="Update Theater location"/>
+            </log>
+            <send>
+                <endpoint key="updateTheaterLocation"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="DELETE" url-mapping="/deleteTheaterLocation">
+        <inSequence>
+            <log/>
+            <send>
+                <endpoint key="deleteTheaterLocation"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+</api>

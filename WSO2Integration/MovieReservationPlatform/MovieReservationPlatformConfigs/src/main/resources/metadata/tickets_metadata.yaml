@@ -1,0 +1,11 @@
+---
+key: "tickets-1.0.0"
+name : "tickets"
+displayName : "tickets"
+description: "Sample API"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/tickets"
+definitionType: "OAS3"
+securityType: "BASIC"
+mutualSSLEnabled: false
+apiId : "null"

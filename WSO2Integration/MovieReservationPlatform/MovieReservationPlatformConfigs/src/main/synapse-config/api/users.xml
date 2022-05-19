@@ -1,12 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <api context="/users" name="users" xmlns="http://ws.apache.org/ns/synapse">
-    <resource methods="POST" url-mapping="/loginUser">
+    <resource methods="POST" url-mapping="/userLogin">
         <inSequence>
             <log>
                 <property name="Message" value="Welcome to Users"/>
             </log>
             <send>
-                <endpoint key="loginUser"/>
+                <endpoint key="userLogin"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" url-mapping="/userRegistration">
+        <inSequence>
+            <log/>
+            <send>
+                <endpoint key="userRegistration"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" url-mapping="/updateUser">
+        <inSequence>
+            <log/>
+            <send>
+                <endpoint key="updateUser"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" url-mapping="/userPasswordReset">
+        <inSequence>
+            <log/>
+            <send>
+                <endpoint key="userPasswordReset"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" url-mapping="/getUser">
+        <inSequence>
+            <log/>
+            <send>
+                <endpoint key="getUser"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="PATCH" url-mapping="/addCart">
+        <inSequence>
+            <log/>
+            <send>
+                <endpoint key="addCart"/>
             </send>
         </inSequence>
         <outSequence>
