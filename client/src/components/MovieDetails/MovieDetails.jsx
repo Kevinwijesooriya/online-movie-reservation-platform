@@ -10,6 +10,10 @@ const MovieDetails = () => {
     const [movies] = state.moviesAPI.movies
     const addCart = state.userAPI.addCart
     const [detailMovie, setDetailMovie] = useState([])
+    const [price ,setPrice]=useState(1000);
+    const [tital ,setTotal]=useState();
+    const [qty ,setQty]=useState();
+    const [selectedTheater, setSelectedTheater]=useState();
 
     useEffect(() =>{
         if(params.id){
@@ -44,11 +48,16 @@ const MovieDetails = () => {
                 <div className='col'>Cast:</div>
                 <div className='col'>{detailMovie.cast}</div>
             </div>
+            <div className='row txt2movieD'>
+                <div className='col'>Price for one ticket:</div>
+                <div className='col'>Rs.{price}</div>
+            </div>
          
             
         </div>
-        <div className='rightSide formBody sticky'>
+        <div className='rightSide formBody2 sticky'>
             <h1>BOOK NOW</h1><br/>
+
             <center>
             <button className='btn btn-outline-success'>ADD TO CART</button>
             </center>

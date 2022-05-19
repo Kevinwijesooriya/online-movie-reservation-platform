@@ -54,6 +54,24 @@ width: 100%;
   overflow:hidden;
 
 }
+
+.formBody2{
+  width: 60%;
+  margin: auto;
+  align-items: center;
+  padding: 20px;
+  box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
+  background: rgba(3, 3, 3, 0.5);
+  color:azure;
+  overflow:hidden;
+  animation: mymove 10s infinite;
+}
+
+@keyframes mymove {
+  from {box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;}
+  to {box-shadow: rgba(0, 247, 53, 0.35) 0px 5px 15px;}
+}
+
 main{
   margin-top: 2rem;
   margin-bottom: 1rem;
