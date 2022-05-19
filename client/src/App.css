@@ -117,3 +117,43 @@ a:hover{
   padding: 5px 7px;
   font-size: 10px;
 }
+.moviedetail{
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.leftSide{
+ width: 60%;
+
+ color: rgb(255, 255, 255);
+ display: inline-block;
+ align-items: center;
+}
+.leftSide img{
+  width: 70%;
+  
+}
+
+.rightSide{
+  width: 35%;
+  right: 0;
+
+}
+
+.sticky{
+  position: fixed;
+  
+}
+
+.txt1movieD{
+  font-size: 40px;
+}
+.txt2movieD{
+  font-size: 30px;
+}
+.txt3movieD{
+  font-size: 18px;
+}
