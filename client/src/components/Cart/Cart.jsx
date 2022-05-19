@@ -127,7 +127,7 @@ function Cart() {
             
                 
             } catch (err) {
-                //console.log(err);
+                console.log(err);
                 toast.error(err.message, {
                     position: "top-right",
                     autoClose: 5000,

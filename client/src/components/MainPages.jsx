@@ -19,6 +19,7 @@ import Movies from './Movie/Movies.jsx';
 import MovieDetails from './MovieDetails/MovieDetails.jsx';
 import ContactUs from './ContactUs/ContactUs.jsx';
 import Cart from './Cart/Cart.jsx';
+import Tickects from './Tickets/Tickects.jsx';
 //edit
 
 const MainPages = () => {
@@ -45,6 +46,7 @@ const MainPages = () => {
               <Route path="/moviedetail/:id" element={<MovieDetails/>}/>
               <Route path="/contactUs" element={<ContactUs/>}/>
               <Route path="/cart" element={<Cart/>}/>
+              <Route path='/ticketsList' element={<Tickects/>}/>
         </Routes>
 
   )

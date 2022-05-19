@@ -53,6 +53,7 @@ const Navbar = () => {
           <Link to={"/addCategories"}>Movie Categories Managements</Link>
           <Link to={"/bookings"}>Bookings Managements</Link>
         </>}
+        <Link to={"/ticketsList"}>Tickets</Link>
           <Link to={"/profile"}>{userDetails.name}</Link>
           {
                 isAdmin ? '' 

@@ -13,7 +13,8 @@ const ticketSchema = new Schema(
     },
     email:{
     type: String,
-    required: true
+    required: true,
+    unique:false
     },
     phone:{
       type: String,
