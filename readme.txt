@@ -3,6 +3,7 @@ CONTENTS OF THIS FILE
 
  * Content of Deliverables
  * Configuration
+ * Important data
 
 CONTENT OF DELIVERABLES
 ------------
@@ -67,3 +68,13 @@ CONFIGURATION
 		* client
 
  
+IMPORTANT DATA 
+---------------
+
+.env
+
+REFRESH_TOKEN_SECRET=njajkldaskdjaskdkajsdkl
+ACCESS_TOKEN_SECRET=jajdaskldaskldjksajdklasjd
+CLOUD_NAME=sliitamila
+CLOUD_API_KEY=397144919232425
+CLOUD_API_SECRET=36aIGmnN_0eNNYx81EWHdVeAiuo

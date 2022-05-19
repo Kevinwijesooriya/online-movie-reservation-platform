@@ -9,6 +9,7 @@ function LocationAPI() {
         const getLocations = async () =>{
             try {
                 const res = await axios.get('http://localhost:5080/api/location')
+                // When Integrated using WSO2 Use http://localhost:8290/theaters/getTheaterLocation
                 setLocations(res.data)
                
             } catch (error) {

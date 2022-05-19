@@ -34,6 +34,7 @@ function Cart() {
 
     const addToCart = async (cart) =>{
        try {
+           // When Integrated using WSO2 Use http://localhost:8290/users/addCart
         const res = await axios.patch('http://localhost:5010/api/user/addcart', {cart}, {
             headers: {Authorization: token}
         })
@@ -109,6 +110,7 @@ function Cart() {
                 });
         } else {
             try {
+                // When Integrated using WSO2 Use http://localhost:8290/tickets/getTickets
                 const res = await axios.post('http://localhost:5090/api/ticket', {cart, total}, {
                     headers: {Authorization: token}
                 })

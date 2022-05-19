@@ -21,6 +21,7 @@ function Categories() {
         try {
             if(onEdit){
                 try {
+                    // When Integrated using WSO2 Use http://localhost:8290/movies/updateMovieCategory
                     const res = await axios.put(`http://localhost:5000/api/catelog/${id}`, {name: category}, {
                         headers: {Authorization: token}
                     })
@@ -48,6 +49,7 @@ function Categories() {
                
             }else{
                 try {
+                    // When Integrated using WSO2 Use http://localhost:8290/movies/addMovieCategory
                     const res = await axios.post('http://localhost:5000/api/catelog', {name: category}, {
                         headers: {Authorization: token}
                     })
@@ -91,6 +93,7 @@ function Categories() {
 
     const deleteCategory = async id =>{
         try {
+            // When Integrated using WSO2 Use http://localhost:8290/movies/deleteMovieCategory
             const res = await axios.delete(`http://localhost:5000/api/catelog/${id}`, {
                 headers: {Authorization: token}
             })

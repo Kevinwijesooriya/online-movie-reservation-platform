@@ -40,6 +40,7 @@ const Profile = () => {
       
     } else {
       try {
+        // When Integrated using WSO2 Use http://localhost:8290/users/updateUser
         const res = await axios.post('http://localhost:5010/api/user/updateInfo', {...user},{
           headers: {Authorization: token}
       })

@@ -9,6 +9,7 @@ function CategoriesAPI() {
         const getCategories = async () =>{
             try {
                 const res = await axios.get('http://localhost:5000/api/catelog')
+                // When Integrated using WSO2 Use http://localhost:8290/movies/getMovieCategories 
                 setCategories(res.data)
             } catch (error) {
 

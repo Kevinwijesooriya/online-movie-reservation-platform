@@ -32,6 +32,7 @@ const changePassword = async( e )=>{
     
   } else {
     try {
+      // When Integrated using WSO2 Use http://localhost:8290/users/userPasswordReset
       const res = await axios.post('http://localhost:5010/api/user/resetPassword', {...user})
       toast.success(res.data.msg, {
           position: "top-right",

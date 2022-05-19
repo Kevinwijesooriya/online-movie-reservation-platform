@@ -1,0 +1,103 @@
+
+theaters | POST
+
+http://localhost:8290/theaters/addTheater
+
+theaters | GET
+
+http://localhost:8290/theaters/getTheaters
+
+theaters | PUT
+
+http://localhost:8290/theaters/updateTheater
+
+theaters | POST
+
+http://localhost:8290/theaters/deleteTheater
+
+theaters | POST
+
+http://localhost:8290/theaters/addTheaterLocation
+
+theaters | PUT
+
+http://localhost:8290/theaters/updateTheaterLocations
+
+theaters | DELETE
+
+http://localhost:8290/theaters/deleteTheaterLocation
+
+
+
+tickets | GET
+
+http://localhost:8290/tickets/getTickets
+
+tickets | GET
+
+http://localhost:8290/tickets/getMyTicket
+
+tickets | DELETE
+
+http://localhost:8290/tickets/deleteTicket
+
+
+
+movies | GET
+
+http://localhost:8290/movies/getMovies
+
+movies | PUT
+
+http://localhost:8290/movies/updateMovie
+
+movies | DELETE
+
+http://localhost:8290/movies/movieDelete
+
+movies | GET
+
+http://localhost:8290/movies/getMovieCategories
+
+movies | PUT
+
+http://localhost:8290/movies/updateMovieCategory
+
+movies | POST
+
+http://localhost:8290/movies/addMovieCategory
+
+movies | POST
+
+http://localhost:8290/movies/movieImageUpload
+
+movies | POST
+
+http://localhost:8290/movies/movieImageDestroy
+
+
+
+users | POST
+
+http://localhost:8290/users/userLogin
+
+users | POST
+
+http://localhost:8290/users/userRegistration
+
+users | POST
+
+http://localhost:8290/users/updateUser
+
+users | POST
+
+http://localhost:8290/users/userPasswordReset
+
+users | GET
+
+http://localhost:8290/users/getUser
+
+users | PATCH
+
+http://localhost:8290/users/addCart
+ 

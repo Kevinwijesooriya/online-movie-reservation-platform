@@ -32,6 +32,7 @@ const loginSubmit = async( e )=>{
     
   } else {
     try {
+      // When Integrated using WSO2 Use http://localhost:8290/users/userRegistration
       const res = await axios.post('http://localhost:5010/api/user/registration', {...user})
       toast.success(res.data.msg, {
           position: "top-right",

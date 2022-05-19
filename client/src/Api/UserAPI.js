@@ -14,7 +14,7 @@ function UserAPI(token) {
             //console.log(token);
             const getUser = async () =>{
                 try {
-                  
+                  // When Integrated using WSO2 Use http://localhost:8290/users/getUser
                     const res = await axios.get('http://localhost:5010/api/user/infor', {
                         headers: {Authorization: token}
                     })
@@ -49,7 +49,7 @@ function UserAPI(token) {
 
         if(check){
             setCart([...cart, {...movie,...cartData,total, quantity: 1}])
-
+            // When Integrated using WSO2 Use http://localhost:8290/users/addCart
             await axios.patch('http://localhost:5010/api/user/addcart', {cart: [...cart, {...movie,...cartData,total, quantity: 1}]}, {
                 headers: {Authorization: token}
             })

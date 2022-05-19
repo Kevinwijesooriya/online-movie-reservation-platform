@@ -100,6 +100,7 @@ function CreateTheater() {
 
             setLoading(true);
             try {
+                // When Integrated using WSO2 Use http://localhost:8290/theaters/addTheater
                 const res = await axios.post('http://localhost:5080/api/upload', formData, {
                     headers: {'content-type': 'multipart/form-data', Authorization: token}
                 })
@@ -154,6 +155,7 @@ function CreateTheater() {
                 progress: undefined,
                 });
             setLoading(true)
+            // When Integrated using WSO2 Use http://localhost:8290/theaters/deleteTheater
             await axios.post('http://localhost:5080/api/destroy', {public_id: images.public_id}, {
                 headers: {Authorization: token}
             })
@@ -201,6 +203,7 @@ function CreateTheater() {
                 });
 
             if(onEdit){
+                // When Integrated using WSO2 Use http://localhost:8290/theaters/updateTheater
                 const res=await axios.put(`http://localhost:5080/api/theaters/${theater._id}`, {...theater, images}, {
                     headers: {Authorization: token}
                 })
@@ -214,6 +217,7 @@ function CreateTheater() {
                     progress: undefined,
                     });
             }else{
+                // When Integrated using WSO2 Use http://localhost:8290/theaters/addTheater
                 const res = await axios.post('http://localhost:5080/api/theaters', {...theater, images}, {
                     headers: {Authorization: token}
                 })
