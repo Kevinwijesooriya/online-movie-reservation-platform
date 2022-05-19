@@ -1,12 +1,12 @@
 openapi: 3.0.1
 info:
-  title: users
-  description: API Definition of users
+  title: theaters
+  description: API Definition of theaters
   version: 1.0.0
 servers:
-- url: http://localhost:8290/users
+- url: http://localhost:8290/theaters
 paths:
-  /userLogin:
+  /addTheater:
     post:
       requestBody:
         description: Sample Payload
@@ -21,58 +21,13 @@ paths:
       responses:
         default:
           description: Default response
-  /userRegistration:
-    post:
-      requestBody:
-        description: Sample Payload
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                payload:
-                  type: object
-        required: false
-      responses:
-        default:
-          description: Default response
-  /updateUser:
-    post:
-      requestBody:
-        description: Sample Payload
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                payload:
-                  type: object
-        required: false
-      responses:
-        default:
-          description: Default response
-  /userPasswordReset:
-    post:
-      requestBody:
-        description: Sample Payload
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                payload:
-                  type: object
-        required: false
-      responses:
-        default:
-          description: Default response
-  /getUser:
+  /getTheaters:
     get:
       responses:
         default:
           description: Default response
-  /addCart:
-    patch:
+  /updateTheater:
+    put:
       requestBody:
         description: Sample Payload
         content:
@@ -83,6 +38,56 @@ paths:
                 payload:
                   type: object
         required: false
+      responses:
+        default:
+          description: Default response
+  /deleteTheater:
+    post:
+      requestBody:
+        description: Sample Payload
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                payload:
+                  type: object
+        required: false
+      responses:
+        default:
+          description: Default response
+  /addTheaterLocation:
+    post:
+      requestBody:
+        description: Sample Payload
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                payload:
+                  type: object
+        required: false
+      responses:
+        default:
+          description: Default response
+  /updateTheaterLocations:
+    put:
+      requestBody:
+        description: Sample Payload
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                payload:
+                  type: object
+        required: false
+      responses:
+        default:
+          description: Default response
+  /deleteTheaterLocation:
+    delete:
       responses:
         default:
           description: Default response

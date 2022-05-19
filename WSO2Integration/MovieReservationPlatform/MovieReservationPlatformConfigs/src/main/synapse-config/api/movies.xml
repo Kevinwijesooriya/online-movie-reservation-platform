@@ -14,4 +14,88 @@
         </outSequence>
         <faultSequence/>
     </resource>
+    <resource methods="PUT" url-mapping="/updateMovie">
+        <inSequence>
+            <log/>
+            <send>
+                <endpoint key="updateMovie"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="DELETE" url-mapping="/movieDelete">
+        <inSequence>
+            <log/>
+            <send>
+                <endpoint key="movieDelete"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" url-mapping="/getMovieCategories">
+        <inSequence>
+            <log/>
+            <send>
+                <endpoint key="getMovieCategories"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="PUT" url-mapping="/updateMovieCategory">
+        <inSequence>
+            <log/>
+            <send>
+                <endpoint key="updateMovieCategory"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" url-mapping="/addMovieCategory">
+        <inSequence>
+            <log/>
+            <send>
+                <endpoint key="addMovieCategory"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" url-mapping="/movieImageUpload">
+        <inSequence>
+            <log/>
+            <send>
+                <endpoint key="movieImageUpload"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" url-mapping="/movieImageDestroy">
+        <inSequence>
+            <log/>
+            <send>
+                <endpoint key="movieImageDestroy"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
 </api>

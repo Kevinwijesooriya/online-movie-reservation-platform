@@ -14,15 +14,15 @@
   <name>MovieReservationPlatformCompositeExporter</name>
   <description>MovieReservationPlatformCompositeExporter</description>
   <properties>
-    <com.example.api_._reservation>capp/EnterpriseServiceBus</com.example.api_._reservation>
+    
     <com.example.metadata_._reservation_metadata>capp/EnterpriseServiceBus</com.example.metadata_._reservation_metadata>
     <com.example.metadata_._users_metadata>capp/EnterpriseServiceBus</com.example.metadata_._users_metadata>
     <com.example.endpoint_._getMovies>capp/EnterpriseServiceBus</com.example.endpoint_._getMovies>
     <com.example.api_._movies>capp/EnterpriseServiceBus</com.example.api_._movies>
     <com.example.metadata_._movies_swagger>capp/EnterpriseServiceBus</com.example.metadata_._movies_swagger>
     <com.example.api_._users>capp/EnterpriseServiceBus</com.example.api_._users>
-    <com.example.endpoint_._getReservations>capp/EnterpriseServiceBus</com.example.endpoint_._getReservations>
-    <com.example.endpoint_._loginUser>capp/EnterpriseServiceBus</com.example.endpoint_._loginUser>
+    
+    
     <com.example.metadata_._users_swagger>capp/EnterpriseServiceBus</com.example.metadata_._users_swagger>
     <com.example.metadata_._reservation_swagger>capp/EnterpriseServiceBus</com.example.metadata_._reservation_swagger>
     <artifact.types>jaggery/app=zip,synapse/priority-executor=xml,synapse/inbound-endpoint=xml,service/rule=aar,synapse/message-store=xml,event/stream=json,service/meta=xml,datasource/datasource=xml,synapse/proxy-service=xml,bpel/workflow=zip,synapse/sequence=xml,synapse/endpointTemplate=xml,carbon/application=car,wso2/gadget=dar,synapse/api=xml,synapse/event-source=xml,synapse/message-processors=xml,event/receiver=xml,lib/dataservice/validator=jar,synapse/template=xml,synapse/endpoint=xml,lib/carbon/ui=jar,lib/synapse/mediator=jar,synapse/metadata=yaml,event/publisher=xml,synapse/local-entry=xml,synapse/task=xml,webapp/jaxws=war,registry/resource=zip,synapse/configuration=xml,service/axis2=aar,synapse/lib=zip,synapse/sequenceTemplate=xml,event/execution-plan=siddhiql,service/dataservice=dbs,web/application=war,lib/library/bundle=jar</artifact.types>
@@ -59,13 +59,7 @@
       <version>1.0.0</version>
       <type>yaml</type>
     </dependency>
-    <dependency>
-      <groupId>com.example.api</groupId>
-      <artifactId>reservation</artifactId>
-      <version>1.0.0</version>
-      <type>xml</type>
-    </dependency>
-    <dependency>
+        <dependency>
       <groupId>com.example.metadata</groupId>
       <artifactId>users_metadata</artifactId>
       <version>1.0.0</version>
@@ -89,19 +83,7 @@
       <version>1.0.0</version>
       <type>xml</type>
     </dependency>
-    <dependency>
-      <groupId>com.example.endpoint</groupId>
-      <artifactId>getReservations</artifactId>
-      <version>1.0.0</version>
-      <type>xml</type>
-    </dependency>
-    <dependency>
-      <groupId>com.example.endpoint</groupId>
-      <artifactId>loginUser</artifactId>
-      <version>1.0.0</version>
-      <type>xml</type>
-    </dependency>
-  </dependencies>
+          </dependencies>
   <repositories>
     <repository>
       <releases>

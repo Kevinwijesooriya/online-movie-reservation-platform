@@ -1,0 +1,23 @@
+openapi: 3.0.1
+info:
+  title: tickets
+  description: API Definition of tickets
+  version: 1.0.0
+servers:
+- url: http://localhost:8290/tickets
+paths:
+  /getTickets:
+    get:
+      responses:
+        default:
+          description: Default response
+  /getMyTicket:
+    get:
+      responses:
+        default:
+          description: Default response
+  /deleteTicket:
+    delete:
+      responses:
+        default:
+          description: Default response
