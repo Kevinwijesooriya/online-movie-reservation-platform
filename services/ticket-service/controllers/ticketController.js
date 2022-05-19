@@ -11,6 +11,16 @@ const ticketController ={
             return res.status(500).json({msg: err.message})
         }
     },
+    getMyTickets:async(req, res) =>{
+        try {
+            const user = await Users.findById(req.params.id)
+            if(!user) return res.status(400).json({msg: "User does not exist."})
+            const tickets = await Tickets.findOne({user_id: user._id})
+            res.json( tickets)
+        } catch (err) {
+            return res.status(500).json({msg: err.message})
+        }
+    },
     createTicket: async(req, res) => {
         try {
             const user = await Users.findById(req.user.id).select('name phone email')
@@ -20,7 +30,7 @@ const ticketController ={
 
             const {_id, name, email, phone} = user;
 
-            const newTicket = new Orders({
+            const newTicket = new Tickets({
                 user_id: _id, name, email, phone, cart, total
             })
 

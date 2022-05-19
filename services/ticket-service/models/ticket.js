@@ -13,7 +13,8 @@ const ticketSchema = new Schema(
     },
     email:{
     type: String,
-    required: true
+    required: true,
+    unique:false
     },
     phone:{
       type: String,
@@ -26,6 +27,10 @@ const ticketSchema = new Schema(
     cart: {
       type: Array,
       required: true
+    },
+    isPaid:{
+      type: Boolean,
+      default: false
     },
     status:{
       type: Boolean,

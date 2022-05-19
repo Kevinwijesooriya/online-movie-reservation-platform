@@ -13,7 +13,7 @@ function Cart() {
     const [token] = state.token
     const [total, setTotal] = useState(0)
     const [address, setAddress] = useState("")
-    console.log(cart);
+    //console.log(cart);
     const handleChange = (e) => {
         setAddress(e.target.value);
       };
@@ -22,7 +22,7 @@ function Cart() {
     useEffect(() =>{
         const getTotal = () =>{
             const total = cart.reduce((prev, item) => {
-                return prev + (item.price * item.quantity)
+                return prev + (item.total * item.quantity)
             },0)
 
             setTotal(total)
@@ -95,9 +95,10 @@ function Cart() {
         }
     }
 
-    const tranSuccess = async() => {
-        if(address==""){
-            toast.warning("Pleace fill the Shipping Address", {
+    const addTicket = async() => {
+        
+        if (cart.length === 0) {
+            toast.error("Cart is Empty", {
                 position: "top-right",
                 autoClose: 5000,
                 hideProgressBar: false,
@@ -106,12 +107,12 @@ function Cart() {
                 draggable: true,
                 progress: undefined,
                 });
-
-        }else{
+        } else {
             try {
-                const res = await axios.post('/api/order', {cart, total, address}, {
+                const res = await axios.post('http://localhost:5090/api/ticket', {cart, total}, {
                     headers: {Authorization: token}
                 })
+                //console.log(res);
                 toast.success(res.data.msg, {
                     position: "top-right",
                     autoClose: 5000,
@@ -126,6 +127,7 @@ function Cart() {
             
                 
             } catch (err) {
+                console.log(err);
                 toast.error(err.message, {
                     position: "top-right",
                     autoClose: 5000,
@@ -136,13 +138,9 @@ function Cart() {
                     progress: undefined,
                     });
             }
-           
+            
         }
-
-       
-
-        
-       
+           
     }
 
 
@@ -163,7 +161,10 @@ function Cart() {
                         <h2>{c.title}</h2>
 
                        
-                        <p>{c.description}</p>
+                        <p>Qty : {c.qty}</p>
+                        <p>Total : {c.total}</p>
+                        <p>Selected Show Time : {c.selectedShowTime}</p>
+                        <p>Selected Theater : {c.selectedTheater}</p>
                       
 
                         <div className="amount">
@@ -184,7 +185,15 @@ function Cart() {
         </div>
   
             </div>
-            <div className='rightSide formBody sticky'></div>
+            <div className='rightSide formBody sticky'>
+                <h1>PAYMENT</h1>
+                Garnd Total: {total}<br/>
+                <div className='formRow'>
+            <center>
+            <button type="submit" className='btn btn-outline-success' onClick={addTicket}>Create A Ticket</button>
+            </center>
+          </div>
+            </div>
         </div>
         
     )
