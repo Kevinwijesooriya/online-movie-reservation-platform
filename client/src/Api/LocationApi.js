@@ -10,7 +10,7 @@ function LocationAPI() {
             try {
                 const res = await axios.get('http://localhost:5080/api/location')
                 setLocations(res.data)
-                console.log(res);
+               
             } catch (error) {
                 console.log(error)
                 

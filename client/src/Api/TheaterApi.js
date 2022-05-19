@@ -17,7 +17,7 @@ function TheatersAPI() {
             const res = await axios.get(`http://localhost:5080/api/theaters?limit=${page*9}&${location}&${sort}&title[regex]=${search}`)
             setTheaters(res.data.theaters)
             setResult(res.data.result)
-            console.log(res);
+          
             } catch (error) {
                 console.log(error);
             }
