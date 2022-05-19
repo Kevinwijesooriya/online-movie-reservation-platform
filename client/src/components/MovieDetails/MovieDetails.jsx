@@ -14,7 +14,7 @@ const MovieDetails = () => {
     const [total ,setTotal]=useState();
     
     const [cartData , setCartData]=useState({
-        total:'',qty:'',selectedTheater:'',selectedShowTime:''
+        qty:'',selectedTheater:'',selectedShowTime:''
     });
    
 
@@ -45,10 +45,19 @@ const onChangeInput=(e)=>{
       setTotal(price*cartData.qty)
     }, [cartData,price])
     
-  
-    console.log(cartData);
-    console.log(detailMovie);
-    console.log(total);
+  const onClickAddCart=()=>{
+      if (cartData.qty!=''||cartData.selectedShowTime!=''||cartData.selectedTheater!='') {
+        addCart(detailMovie,total,cartData);
+      } else {
+          alert("Fill All Feilds");
+       
+          
+      }
+   
+  }
+    //console.log(cartData);
+    //console.log(detailMovie);
+    //console.log(total);
 
     if(detailMovie.length === 0) return null;
   return (
@@ -86,7 +95,7 @@ const onChangeInput=(e)=>{
             <form onSubmit={cartSubmit}>
           <div className="mb-3">
             <label for="exampleInputEmail1" className="form-label">Theater</label>
-            <select name="selectedTheater" value={cartData.selectedTheater} onChange={onChangeInput}
+            <select name="selectedTheater" required value={cartData.selectedTheater} onChange={onChangeInput}
               className="form-control"  >
                         <option value="">Please select a Theater</option>
                         {
@@ -100,7 +109,7 @@ const onChangeInput=(e)=>{
           </div>
           <div className="mb-3">
             <label for="exampleInputEmail1" className="form-label">Show Time</label>
-            <select name="selectedShowTime" value={cartData.selectedShowTime} onChange={onChangeInput}
+            <select name="selectedShowTime" value={cartData.selectedShowTime} required onChange={onChangeInput}
               className="form-control"  >
                         <option value="">Please select a Show Time</option>
                         {
@@ -123,7 +132,7 @@ const onChangeInput=(e)=>{
               value={cartData.qty} 
               onChange={onChangeInput}
               className="form-control" 
-              id="exampleInputqty1"/>
+              id="exampleInputqty1" required/>
           </div>
           <div className="mb-3">
             <label for="exampleInputtotal1" className="form-label">Total</label>
@@ -133,11 +142,11 @@ const onChangeInput=(e)=>{
               value={total} 
               onChange={onChangeInput}
               className="form-control" 
-              id="exampleInputtotal1" disabled/>
+              id="exampleInputtotal1" required disabled/>
           </div>
           <div className='formRow'>
             <center>
-            <button type="submit" className='btn btn-outline-success'>ADD TO CART</button>
+            <button type="submit" className='btn btn-outline-success' onClick={onClickAddCart}>ADD TO CART</button>
             </center>
           </div>
         </form>

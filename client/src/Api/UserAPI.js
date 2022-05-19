@@ -37,17 +37,17 @@ function UserAPI(token) {
         }
     },[token])
 
-    const addCart = async (ticket) => {
+    const addCart = async (movie,total,cartData) => {
         if(!isLogged) return alert("Please login to continue buying")
 
         const check = cart.every(item =>{
-            return item._id !== ticket._id
+            return item._id !== movie._id
         })
 
         if(check){
-            setCart([...cart, {...ticket, quantity: 1}])
+            setCart([...cart, {...movie,...cartData,total, quantity: 1}])
 
-            await axios.patch('/user/addcart', {cart: [...cart, {...ticket, quantity: 1}]}, {
+            await axios.patch('http://localhost:5010/api/user/addcart', {cart: [...cart, {...movie,...cartData,total, quantity: 1}]}, {
                 headers: {Authorization: token}
             })
 
