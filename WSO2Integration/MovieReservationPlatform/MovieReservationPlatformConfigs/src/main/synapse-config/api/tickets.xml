@@ -42,4 +42,18 @@
         </outSequence>
         <faultSequence/>
     </resource>
+    <resource methods="POST" url-mapping="/addPayment">
+        <inSequence>
+            <log>
+                <property name="Message" value="Welcome to add Payment"/>
+            </log>
+            <send>
+                <endpoint key="addPayment"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
 </api>
