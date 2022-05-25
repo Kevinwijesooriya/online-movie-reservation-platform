@@ -4,7 +4,7 @@ import auth from "../middleware/auth.js";
 import authAdmin from "../middleware/authAdmin.js";
 const paymentRoute = Router();
 
-paymentRoute.post("/api/payment", paymentController.createPayment);
+paymentRoute.post("/api/payment",auth, paymentController.createPayment);
 
 
 export default paymentRoute;

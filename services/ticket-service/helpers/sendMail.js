@@ -1,8 +1,9 @@
-const nodemailer = require("nodemailer");
-const { google } = require("googleapis");
+import { createTransport } from "nodemailer";
+import { google } from "googleapis";
 const { OAuth2 } = google.auth;
 const OAUTH_PLAYGROUND = "https://developers.google.com/oauthplayground";
-require("dotenv").config();
+//require("dotenv").config();
+import {} from "dotenv/config";
 
 const { G_CLIENT_ID, G_CLIENT_SECRET, G_REFRESH_TOKEN, ADMIN_EMAIL } =
   process.env;
@@ -16,12 +17,12 @@ const oauth2client = new OAuth2(
 
 
 
-const sendEmail = (to, ticket_id) => {
+const sendEmail = (to, ticket_id,total) => {
   oauth2client.setCredentials({
     refresh_token: G_REFRESH_TOKEN,
   });
   const accessToken = oauth2client.getAccessToken();
-  const smtpTransport = nodemailer.createTransport({
+  const smtpTransport = createTransport({
     service: "gmail",
     auth: {
       type: "OAuth2",
@@ -115,4 +116,4 @@ const sendEmail = (to, ticket_id) => {
   });
 };
 
-module.exports = { sendEmail };
+export default sendEmail;
