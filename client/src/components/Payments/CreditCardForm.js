@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import useForm from "./useForm";
 import { Button, Form, Alert, Row, Col } from "react-bootstrap";
 //import "bootstrap/dist/css/bootstrap.min.css";
@@ -8,13 +8,18 @@ import "react-credit-cards/es/styles-compiled.css";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from "axios";
+import { GlobalState } from '../../GlobalState';
 
 
 const CreditCardForm = ({data}) => {
   const { handleChange, handleFocus, handleSubmit, values, errors } = useForm();
+  const state = useContext(GlobalState)
+  const [token] = state.token
   const payClick =async()=>{
     try {
-      const res = await axios.post("http://localhost:5090/api/payment",data);
+      const res = await axios.post("http://localhost:5090/api/payment",data, {
+        headers: {Authorization: token}
+    });
       toast.success(res.data.msg, {
         position: "top-right",
         autoClose: 5000,
