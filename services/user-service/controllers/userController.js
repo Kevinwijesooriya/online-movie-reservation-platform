@@ -159,6 +159,35 @@ const userController = {
             return res.status(500).json({msg: err.message})
         }
     },
+    getAllUsers:async(req,res)=>{
+      try {
+        const users = await User.find();
+        res.status(200).json(users);
+      } catch (error) {
+        return res.status(500).json({msg: error.message})
+      }
+    },
+    updateUserRole:async(req,res)=>{
+      try {
+        const { role } = req.body;
+        const userID = req.params.id;
+        await User.findByIdAndUpdate({_id: userID}, {
+          role: role
+      })
+      } catch (error) {
+        return res.status(500).json({msg: error.message})
+      }
+    },
+    deleteUser:async(req,res)=>{
+      try {
+        const userID = req.params.id;
+        console.log(userID);
+        await User.findByIdAndDelete(userID);
+        res.status(200).json({msg: "Deleted"})
+      } catch (error) {
+        return res.status(500).json({msg: error.message})
+      }
+    }
    
   };
 

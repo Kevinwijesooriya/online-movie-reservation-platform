@@ -23,12 +23,14 @@ import Cart from './Cart/Cart.jsx';
 import Tickects from './Tickets/Tickects.jsx';
 import QRgenerator from './Ticket/QRgenerator.js';
 import Payment from './Payments/Payment.jsx';
+import UserManagement from './UserManagement/UserManagement.jsx';
 //edit
 
 const MainPages = () => {
       const state = useContext(GlobalState);
       const [isLogged] = state.userAPI.isLogged;
       const [isAdmin] = state.userAPI.isAdmin;
+      const [isSuperAdmin] = state.userAPI.isSuperAdmin;
   return (
          
         <Routes>
@@ -55,6 +57,8 @@ const MainPages = () => {
               <Route path="/contactUs" element={<ContactUs/>}/>
               <Route path="/cart" element={<Cart/>}/>
               <Route path='/ticketsList' element={<Tickects/>}/>
+
+              <Route path="/usermanagement" element={isSuperAdmin ? <UserManagement/> : <NotFound/>} />
         </Routes>
 
   )

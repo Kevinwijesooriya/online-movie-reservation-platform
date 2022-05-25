@@ -8,6 +8,7 @@ const Navbar = () => {
     const state = useContext(GlobalState);
     const [isLogged] = state.userAPI.isLogged;
     const [isAdmin] = state.userAPI.isAdmin;
+    const [isSuperAdmin] = state.userAPI.isSuperAdmin;
     const [userDetails] = state.userAPI.user;
     const [cart] = state.userAPI.cart;
 
@@ -47,6 +48,9 @@ const Navbar = () => {
       </ul>
       <form class="d-flex">
         {isLogged ? <>
+        {isSuperAdmin&&<>
+          <Link to={"/usermanagement"}>User Managements</Link>
+        </>}
         {isAdmin&& <>
           <Link to={"/theaters"}>Theater Managements</Link>
           <Link to={"/locations"}>Location Managements</Link>
